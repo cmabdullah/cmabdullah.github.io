@@ -3,13 +3,79 @@
 
 <head>
 
+
+    <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+              //  text:"Experience"               
+
+            },
+                        animationEnabled: true,
+            axisX:{
+                interval: 1,
+                gridThickness: 0,
+                labelFontSize: 10,
+                labelFontStyle: "normal",
+                labelFontWeight: "normal",
+                labelFontFamily: "Lucida Sans Unicode"
+
+            },
+            axisY2:{
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)"
+
+            },
+
+            data: [
+            {     
+                type: "bar",
+                name: "companies",
+                axisYType: "secondary",
+                color: "#014D65",               
+                dataPoints: [
+                {y: 50, label: "Python" },
+                {y: 60, label: "Php"   },        
+                {y: 75, label: "C++"},
+                {y: 80, label: "Java"   },
+                {y: 85, label: "SQL"  },
+                {y: 95, label: "C" }
+                ]
+            }
+            
+            ]
+        });
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+<!--for chart -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>CM's personal web site</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -82,7 +148,7 @@
                         <h1 class="brand-heading">Abdullah</h1>
                         <p class="intro-text">Learner📗,Developer🔸,Maker🔨,Open Source Enthusiast ⌨ 
                             <br> I hate studying. I like learning. Learning is beautiful.</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
+                        <a href="#experience" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -95,10 +161,15 @@
     <section id="experience" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Experience</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+            <h2>Experience</h2>
+
+                <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div><!--Print experience chart-->
+                <p>I have completed many language like <a href="https://github.com/cmabdullah/cProblems/"> C </a>C++, java, SQL and so on.</p>
+                <p>
+                <p>Specially programming is my passion, thats why i love programming.</p>
+
+                <p>I believe in sharing knowledge that’s why I am open source enthusiast, most of my work is open sourced and always will be. </p>
             </div>
         </div>
     </section>
