@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+	<script type="text/javascript">
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer", {
+
+			title:{
+				text:"Experience"				
+
+			},
+                        animationEnabled: true,
+			axisX:{
+				interval: 1,
+				gridThickness: 0,
+				labelFontSize: 10,
+				labelFontStyle: "normal",
+				labelFontWeight: "normal",
+				labelFontFamily: "Lucida Sans Unicode"
+
+			},
+			axisY2:{
+				interlacedColor: "rgba(1,77,101,.2)",
+				gridColor: "rgba(1,77,101,.1)"
+
+			},
+
+			data: [
+			{     
+				type: "bar",
+                name: "companies",
+				axisYType: "secondary",
+				color: "#014D65",				
+				dataPoints: [
+				{y: 50, label: "Python" },
+				{y: 70, label: "Php"   },
+				{y: 85, label: "SQL"  },
+				{y: 80, label: "Java"   },
+				{y: 75, label: "C++"},
+				{y: 92, label: "C" }
+				]
+			}
+			
+			]
+		});
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 300px; width: 100%;">
+	</div>
+</body>
+</html>
