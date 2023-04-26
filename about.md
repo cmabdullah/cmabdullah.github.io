@@ -11,7 +11,9 @@ redirect_from:
 
 # About
 
-<!--author-->
+Hi, I'm **C M**, *Abdullah* **Khan**.<br>
+I'm currently working at **[BJIT]**.<br>
+I like to solve brain teasing problems in field of CSE (probably the reason I liked multi-core programming / OS courses).<br>
 
 ## Hydejack
 
