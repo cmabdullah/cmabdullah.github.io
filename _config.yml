@@ -89,6 +89,8 @@ remote_theme: hydecorp/hydejack@v9
 # This will fetch the `v9` branch of the public Hydejack repository on GitHub.
 # remote_theme: hydecorp/hydejack@v9
 
+google_analytics: G-C16J6DB4J1
+
 # Customizaton
 # ----------------------------------------------------------------------------------------
  
