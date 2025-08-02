@@ -178,6 +178,8 @@ kramdown:
   math_engine:         katex
   math_engine_opts:    {}
   footnote_backlink:   '&#x21a9;&#xfe0e;'
+  parse_span_html: true  # Add this line
+  parse_block_html: true # Add this line
 
 
 # Hydejack Settings
