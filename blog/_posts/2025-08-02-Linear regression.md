@@ -4,7 +4,7 @@ Linear regression is a supervised machine learning algorithm that tries to model
 and an output variable (label) by fitting a straight line to the data.
 
 General Form Equation (Simple Linear Regression)
-For one input feature 𝑥, the model is: 𝑦 = 𝑤𝑥 + 𝑏
+For one input feature 𝑥, the model is: _**𝑦 = 𝑤𝑥 + 𝑏**_
 
 Let’s say you want to predict someone's weight based on their height:
 
@@ -20,9 +20,9 @@ Where:
 
 Find the best values of 𝑤 and 𝑏 such that the predicted values ŷ are as close as possible to the actual values 𝑦.
 
-Linear regression form: weight = 𝑤 ⋅ height + 𝑏
+Linear regression form: **weight = 𝑤 ⋅ height + 𝑏**
 
-Matches: 𝑦 = 𝑤𝑥 + 𝑏
+Matches: **𝑦 = 𝑤𝑥 + 𝑏**
 
 So, when doing machine learning:
 
@@ -74,14 +74,15 @@ $$</span>
 Step 4: Plug in the Values
 Let’s calculate the required sums:
 
-| Height (x) | Weight (y) | x * y   | x^2       |            |
-|------------|------------|---------|-----------|------------|
-| 160        | 50         | 8000    | 25600     |            |
-| 165        | 55         | 9075    | 27225     |            |
-| 170        | 60         | 10200   | 28900     |            |
-| 175        | 65         | 11375   | 30625     |            |
-| 180        | 70         | 12600   | 32400     |            |
-| **Σ**      | **830**    | **300** | **51250** | **144750** |
+| Height <span class="inline-math">$$(x)$$</span> | Weight <span class="inline-math">$$(y)$$</span> | <span class="inline-math">$$x \cdot y$$</span> | <span class="inline-math">$$x^2$$</span> | 
+|-------------------------------------------------|-------------------------------------------------|------------------------------------------------|------------------------------------------| 
+| 165                                             | 55                                              | 9075                                           | 27225                                    |       
+| 170                                             | 60                                              | 10200                                          | 28900                                    |        
+| 175                                             | 65                                              | 11375                                          | 30625                                    |        
+| 180                                             | 70                                              | 12600                                          | 32400                                    |      
+| **<span class="inline-math">$$\Sigma$$</span>** | **830**                                         | **300**                                        | **51250**                                |
+
+
 
 
 <div style="text-align: left;">
@@ -119,10 +120,6 @@ This means: for a given height (in cm), you can estimate the weight (in kg) with
 
 If someone's height is 172 cm:
 
-<div class="left-align-math">
-
-$$
+<span class="result-equation">$$
 \text{weight} = 1 \cdot 172 - 110 = 62 \text{ kg}
-$$
-
-</div>
+$$</span>
