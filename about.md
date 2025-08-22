@@ -13,9 +13,8 @@ redirect_from:
 
 # About
 
-<div style="text-align: center">
-    <img src="/assets/img/jugbd_cm.JPG" alt loading="lazy" style="border-radius: 15px;"> <!--width="450"-->
-</div>
+{:.center}
+![Abdullah Khan](/assets/img/jugbd_cm.JPG){:.lead width="450" height="450" loading="lazy"}
  
 
 
