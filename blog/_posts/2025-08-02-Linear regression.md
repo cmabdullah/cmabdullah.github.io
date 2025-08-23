@@ -22,6 +22,14 @@ Find the best values of 𝑤 and 𝑏 such that the predicted values ŷ are as c
 
 Linear regression form: **weight = 𝑤 ⋅ height + 𝑏**
 
+Machine Learning Notation: <span class="inline-math">$$f_{w,b}(x) = (w × x) + b$$</span>
+
+In machine learning, we use <span class="inline-math">$$f_{w,b}(x)$$</span> because:
+
+        Function notation: Emphasizes that this is a function that takes x as input
+        Parameter subscripts: The subscripts {w,b} show which parameters the function depends on
+        Prediction emphasis: Makes it clear this is a prediction/estimate, not the true y value
+
 Matches: **𝑦 = 𝑤𝑥 + 𝑏**
 
 So, when doing machine learning:
