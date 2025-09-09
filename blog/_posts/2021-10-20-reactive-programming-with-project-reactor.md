@@ -1,7 +1,9 @@
 ---
-
-image: 'https://dreamix.eu/blog/wp-content/uploads/2017/09/reactive-benchmark-1508x706_c.jpg'
-
+layout: post
+title: Reactive Programming with Project Reactor
+categories: [programming]
+tags: [project-reactor, flux, mono, reactive-streams]
+image: '/assets/img/reactive.jpeg'
 ---
 
 ## প্রজেক্ট রিয়েক্টর প্রথম পর্ব। Reactive Systems এর মূল লক্ষ্য কী?

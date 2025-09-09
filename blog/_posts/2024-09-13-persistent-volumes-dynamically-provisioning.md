@@ -1,3 +1,11 @@
+---
+layout: post
+title: Dynamically Provisioning Persistent Volumes
+categories: [devops]
+tags: [persistent-volumes, kubernetes, storage]
+image: '/assets/img/pv.png'
+---
+
 # Dynamically Provisioning Persistent Volumes
 
 

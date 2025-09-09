@@ -1,3 +1,11 @@
+---
+layout: post
+title: How to mount a volume to a pod in Kubernetes
+categories: [devops]
+tags: [persistent-volumes, kubernetes, pods, storage]
+image: '/assets/img/pv.png'
+---
+
 # How to mount a volume to a pod in Kubernetes
 
 Kubernetes containers and pods are ephemeral and can be restarted, rescheduled, or deleted.
