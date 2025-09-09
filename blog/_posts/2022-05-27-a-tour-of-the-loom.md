@@ -1,7 +1,9 @@
 ---
-
+layout: post
+title: A Tour of the Loom
+categories: [programming]
+tags: [virtual-threads, concurrency, project-loom]
 image: '/assets/img/loom.jpg'
-
 ---
 
 The main goal of this project is to achieve high throughput with lightweight concurrency with minimal effort in writing code.
