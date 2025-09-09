@@ -1,0 +1,46 @@
+{% comment %}
+Enhanced navigation with submenu support
+{% endcomment %}
+<nav class="sidebar-nav" role="navigation" aria-label="Navigation">
+  {% for node in site.menu %}
+    {% if node.url %}
+      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | relative_url }}">{{ node.title }}</a>
+    {% endif %}
+  {% endfor %}
+  
+  {% comment %} Featured categories with submenus {% endcomment %}
+  {% assign categories = site.featured_categories | where: "sidebar", true | sort: "order" %}
+  {% for category in categories %}
+    <div class="sidebar-nav-category">
+      <input type="checkbox" id="folder-checkbox-{{ category.slug }}" />
+      <button class="spread-btn" onclick="spread('{{ category.slug }}')">
+        <div class="list-wrapper">
+          <div class="list-body">
+            <a href="{{ category.url | relative_url }}">{{ category.title }}</a>
+          </div>
+          <i class="material-icons" id="spread-icon-{{ category.slug }}">arrow_right</i>
+        </div>
+      </button>
+      
+      <ul class="category-submenu">
+        {% assign tags = site.featured_tags | where: "category", category.slug | where: "sidebar", true %}
+        {% for tag in tags %}
+          <li class="sidebar-nav-tag">
+            <a href="{{ tag.url | relative_url }}">{{ tag.title }}</a>
+          </li>
+        {% endfor %}
+        
+        {% comment %} Also include posts that match this category {% endcomment %}
+        {% assign category_posts = site.posts | where: "categories", category.slug %}
+        {% for post in category_posts limit: 5 %}
+          <li class="sidebar-nav-tag">
+            <a href="{{ post.url | relative_url }}">{{ post.title | truncate: 30 }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</nav>
+
+{% comment %} Load the JavaScript {% endcomment %}
+<script src="{{ '/assets/js/sidebar-folder.js' | relative_url }}"></script>
