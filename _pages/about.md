@@ -1,17 +1,8 @@
 ---
-layout: about
-#image: /assets/img/blog/hydejack-9.jpg
-#description: >
-#  A boutique Jekyll theme for hackers, nerds, and academics,
-#  with a focus on personal sites that are meant to impress.
-hide_description: true
-more_posts: posts.md
-sidebar: true
-redirect_from:
-  - /download/
+permalink: /about/
+title: "About Me"
+toc: true
 ---
-
-# About
 
 {:.center}
 ![Abdullah Khan](/assets/img/jugbd_cm.JPG){:.lead width="450" height="450" loading="lazy"}
@@ -87,7 +78,7 @@ _A belief that shapes my actions._
 ***
 
 Blog created by Khan C M, Abdullah on May 09. 2022 in Bangladesh,<br>
-based on the jekyll theme [Hydejack].
+based on the jekyll theme [Mmistakes].
 
 ***
 
