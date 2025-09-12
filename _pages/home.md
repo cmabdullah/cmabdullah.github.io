@@ -47,16 +47,20 @@ feature_row:
 
 <div class="recent-posts">
   <h2>Recently published</h2>
-  {% for post in site.posts limit:5 %}
-    <article class="recent-post">
-      {% if post.header.teaser %}
-        <a href="{{ post.url }}" class="post-thumbnail">
-          <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
-        </a>
+  <div class="entries-grid">
+    {% for post in site.posts limit:5 %}
+      <article class="recent-post archive__item">
+        {% if post.header.teaser %}
+          <div class="archive__item-teaser">
+            <a href="{{ post.url }}" class="post-thumbnail">
+              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+            </a>
+          </div>
       {% endif %}
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
-      <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-    </article>
+        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      </article>
   {% endfor %}
+  </div>
 </div>
