@@ -3,7 +3,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Articles"
-    url: /year-archive/
+    url: /articles/
   - title: "Notes"
     url: /collection-archive/
   - title: "Work"
