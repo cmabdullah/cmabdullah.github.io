@@ -47,20 +47,22 @@ feature_row:
 
 <div class="recent-posts">
   <h2>Recently published</h2>
-  <div class="entries-grid">
+  <div class="entries-list" style="text-align: left;">
     {% for post in site.posts limit:5 %}
-      <article class="recent-post archive__item">
+      <article class="recent-post archive__item" style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
         {% if post.header.teaser %}
-          <div class="archive__item-teaser">
+          <div class="archive__item-teaser" style="flex: 0 0 200px; margin-right: 1rem;">
             <a href="{{ post.url }}" class="post-thumbnail">
-              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto;">
             </a>
           </div>
-      {% endif %}
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
-        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        {% endif %}
+        <div class="post-content" style="flex: 1;">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        </div>
       </article>
-  {% endfor %}
+    {% endfor %}
   </div>
 </div>
