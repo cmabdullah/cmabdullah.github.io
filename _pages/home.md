@@ -49,19 +49,17 @@ feature_row:
   <h2>Recently published</h2>
   <div class="entries-list" style="text-align: left;">
     {% for post in site.posts limit:5 %}
-      <article class="recent-post archive__item" style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
+      <article class="recent-post archive__item" style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
+        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
         {% if post.header.teaser %}
-          <div class="archive__item-teaser" style="flex: 0 0 200px; margin-right: 1rem;">
+          <div class="archive__item-teaser" style="margin-top: 1rem;">
             <a href="{{ post.url }}" class="post-thumbnail">
-              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: auto;">
+              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
             </a>
           </div>
         {% endif %}
-        <div class="post-content" style="flex: 1;">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-        </div>
       </article>
     {% endfor %}
   </div>
