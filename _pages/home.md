@@ -50,8 +50,8 @@ feature_row:
   <div class="entries-list" style="text-align: left;">
     {% for post in site.posts limit:5 %}
       <article class="recent-post archive__item" style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;">
-        <h3><a href="{{ post.url }}" style="text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
+        <h3><a href="{{ post.url }}" style="text-decoration: none; color: white; font-weight: bold; font-size: 1.2em;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">{{ post.title }}</a></h3>
+        <p class="post-meta" style="color: #888; font-size: 0.9em;">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
         <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
         {% if post.header.teaser %}
           <div class="archive__item-teaser" style="margin-top: 1rem;">
