@@ -56,7 +56,7 @@ feature_row:
         {% if post.header.teaser %}
           <div class="archive__item-teaser" style="margin-top: 1rem;">
             <a href="{{ post.url }}" class="post-thumbnail">
-              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+              <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
             </a>
           </div>
         {% endif %}
