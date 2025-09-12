@@ -47,8 +47,13 @@ feature_row:
 
 <div class="recent-posts">
   <h2>Recently published</h2>
-  {% for post in site.posts limit:50 %}
+  {% for post in site.posts limit:5 %}
     <article class="recent-post">
+      {% if post.header.teaser %}
+        <a href="{{ post.url }}" class="post-thumbnail">
+          <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+        </a>
+      {% endif %}
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }} • Read in {{ post.read_time }} mins</p>
       <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
