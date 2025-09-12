@@ -45,7 +45,7 @@ feature_row:
 
 {% include feature_row id="feature_row" %}
 
-<div class="recent-posts">
+<div class="recent-posts" style="width: 50%; float: left; padding-right: 2rem;">
   <h2>Recently published</h2>
   <div class="entries-list" style="text-align: left;">
     {% for post in site.posts limit:5 %}
@@ -64,3 +64,4 @@ feature_row:
     {% endfor %}
   </div>
 </div>
+<div style="clear: both;"></div>
