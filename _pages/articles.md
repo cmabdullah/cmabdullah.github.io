@@ -2,39 +2,22 @@
 layout: splash
 title: "Hello, I'm Abdullah"
 subtitle: "The personal website and blog of Abdullah"
-permalink: /articles/
+hidden: true
+permalink: /articles
 header:
   overlay_color: "#000"
   overlay_filter: "0.2"      # transparency level
-  overlay_image: /assets/images/unsplash-image-9.jpg
-  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
-#excerpt: "Publishing web-friendly content in the form of articles, tutorials, short notes, and other works."
+  overlay_image: /assets/images/mm-home-page-feature.jpg
+  #  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
   actions:
     - label: "Download"
       url: "https://github.com/mmistakes/minimal-mistakes/"
-excerpt: "Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop."
+excerpt: >
+  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
+  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
 intro:
   - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
 
-feature_row:
-  - image_path: /assets/images/unsplash-image-9.jpg
-    title: "Tech Writing"
-    excerpt: "Articles on Java, Cloud, and IoT."
-    url: "/blog/"
-    btn_class: "btn--primary"
-    btn_label: "Read More"
-  - image_path: /assets/images/unsplash-image-9.jpg
-    title: "Projects"
-    excerpt: "See what I'm building and experimenting with."
-    url: "/projects/"
-    btn_class: "btn--primary"
-    btn_label: "Explore"
-  - image_path: /assets/images/unsplash-image-9.jpg
-    title: "Projects"
-    excerpt: "See what I'm building and experimenting with."
-    url: "/projects/"
-    btn_class: "btn--primary"
-    btn_label: "Explore"
 ---
 
 
