@@ -1,23 +1,15 @@
 ---
-layout: splash
-title: "Hello, I'm Abdullah"
-subtitle: "The personal website and blog of Abdullah"
-hidden: true
+layout: single
+title: ""
 permalink: /articles
+classes: wide
 header:
-  overlay_color: "#000"
-  overlay_filter: "0.2"      # transparency level
-  overlay_image: /assets/images/mm-home-page-feature.jpg
-  #  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
+  overlay_color: "#2c3e50"
+  overlay_filter: "0.5"
   actions:
-    - label: "Download"
-      url: "https://github.com/mmistakes/minimal-mistakes/"
-excerpt: >
-  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
-intro:
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
-
+    - label: "Articles — {{ site.posts.size }} articles"
+      url: "#"
+excerpt: "A collection of long form writing and tutorials — mostly about web development and design.<br><br>For shorter, more regular tidbits — peruse the **notes section**.<br><br>**Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Web-development](#) • [Static Sites](#)"
 ---
 
 <!-- Articles Grid Section -->
