@@ -20,9 +20,6 @@ intro:
 
 ---
 
-
-{% include feature_row id="feature_row" %}
-
 <div class="recent-posts">
   <h2>Recently published</h2>
   {% for post in site.posts limit:5 %}
