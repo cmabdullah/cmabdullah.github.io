@@ -1,3 +1,17 @@
+---
+title: "Linear Regression: A Complete Guide with Examples"
+header:
+  teaser: /assets/images/unsplash-image-2.jpg
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - linear regression
+  - machine learning
+  - mathematics
+  - statistics
+---
+
 ### What Is Linear Regression (in ML terms)?
 
 Linear regression is a supervised machine learning algorithm that tries to model the relationship between input variables (features) 

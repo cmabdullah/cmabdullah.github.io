@@ -1,6 +1,8 @@
 ---
 layout: post
 title: How to mount a volume to a pod in Kubernetes
+header:
+  teaser: /assets/images/unsplash-image-4.jpg
 categories: [devops]
 tags: [persistent-volumes, kubernetes, pods, storage]
 image: '/assets/img/pv.png'

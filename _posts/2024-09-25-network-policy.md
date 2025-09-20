@@ -1,6 +1,8 @@
 ---
 layout: post
 title: What is NetworkPolicy in kubernetes?
+header:
+  teaser: /assets/images/unsplash-image-6.jpg
 categories: [devops]
 tags: [network-policy, security, devops]
 image: '/assets/img/networkPolicyIngress.svg'
