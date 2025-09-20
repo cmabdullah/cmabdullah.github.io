@@ -42,9 +42,6 @@ feature_row:
     btn_label: "Learn more"
 ---
 
-
-{% include feature_row id="feature_row" %}
-
 <div class="recent-posts" style="width: 50%; float: left; padding-right: 1rem;">
   <h2>Recently published</h2>
   <div class="entries-list" style="text-align: left;">
