@@ -18,9 +18,3 @@ excerpt: "A collection of long form writing and tutorials — mostly about web d
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
-
-read this file understanding-loss-functions-in-linear-regression.md and configure necesessary thing for math rendering.  you sohuld not remove any stype related things
-
-/Users/cmabdullah/Documents/workspace/cmabdullah.github.io/_includes
-
-this directory contains my-head.html file has some inline stype related things, like 

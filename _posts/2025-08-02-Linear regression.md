@@ -10,6 +10,7 @@ tags:
   - machine learning
   - mathematics
   - statistics
+mathjax: true
 ---
 
 ### What Is Linear Regression (in ML terms)?
@@ -17,8 +18,11 @@ tags:
 Linear regression is a supervised machine learning algorithm that tries to model the relationship between input variables (features) 
 and an output variable (label) by fitting a straight line to the data.
 
-General Form Equation (Simple Linear Regression)
-For one input feature 𝑥, the model is: _**𝑦 = 𝑤𝑥 + 𝑏**_
+**General Form Equation (Simple Linear Regression)**
+
+For one input feature x, the model is:
+
+$$y = wx + b$$
 
 Let’s say you want to predict someone's weight based on their height:
 
@@ -27,30 +31,32 @@ Let’s say you want to predict someone's weight based on their height:
 
 Where:
 
-- 𝑦: is the label (target/output variable) — in your example, weight
-- 𝑥: is the feature (input variable) — in your example, height
-- 𝑤: is the weight (slope) — how much 𝑦 changes when 𝑥 increases
-- 𝑏: is the bias (intercept) — the value of 𝑦 when 𝑥 = 0
+- $y$: is the label (target/output variable) — in your example, weight
+- $x$: is the feature (input variable) — in your example, height  
+- $w$: is the weight (slope) — how much $y$ changes when $x$ increases
+- $b$: is the bias (intercept) — the value of $y$ when $x = 0$
 
-Find the best values of 𝑤 and 𝑏 such that the predicted values ŷ are as close as possible to the actual values 𝑦.
+Find the best values of $w$ and $b$ such that the predicted values $\hat{y}$ are as close as possible to the actual values $y$.
 
-Linear regression form: **weight = 𝑤 ⋅ height + 𝑏**
+Linear regression form: **weight = $w \cdot \text{height} + b$**
 
-Machine Learning Notation: <span class="inline-math">$$f_{w,b}(x) = (w × x) + b$$</span>
+**Machine Learning Notation:** 
 
-In machine learning, we use <span class="inline-math">$$f_{w,b}(x)$$</span> because:
+$$f_{w,b}(x) = wx + b$$
 
-        Function notation: Emphasizes that this is a function that takes x as input
-        Parameter subscripts: The subscripts {w,b} show which parameters the function depends on
-        Prediction emphasis: Makes it clear this is a prediction/estimate, not the true y value
+In machine learning, we use $f_{w,b}(x)$ because:
 
-Matches: **𝑦 = 𝑤𝑥 + 𝑏**
+- **Function notation:** Emphasizes that this is a function that takes x as input
+- **Parameter subscripts:** The subscripts {w,b} show which parameters the function depends on  
+- **Prediction emphasis:** Makes it clear this is a prediction/estimate, not the true y value
+
+This matches: $y = wx + b$
 
 So, when doing machine learning:
 
-- 𝑥 can represent any input (feature), like height, age, number of hours studied, etc.
-- 𝑦 is the prediction the model makes.
-- 𝑤 and 𝑏 are what the model learns from training data.
+- $x$ can represent any input (feature), like height, age, number of hours studied, etc.
+- $y$ is the prediction the model makes.
+- $w$ and $b$ are what the model learns from training data.
 
 Step 1: Sample Data
 
@@ -69,28 +75,22 @@ Here:
 
 ### Step 2: Goal
 
-Find the best-fit line: <span class="result-equation">$$\text{weight} = w \cdot \text{height} + b$$</span>
+Find the best-fit line: 
+
+$$\text{weight} = w \cdot \text{height} + b$$
 
 ### Step 3: Use the Formulas
-To calculate 𝑤 and 𝑏, we use the least squares method:
+To calculate $w$ and $b$, we use the least squares method:
 
-<span class="result-equation">$$
-w = \frac{n\sum(x_i \cdot y_i) - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2}
-$$
+$$w = \frac{n\sum(x_i \cdot y_i) - \sum x_i \sum y_i}{n\sum x_i^2 - (\sum x_i)^2}$$
 
-<span class="result-equation">$$
-b = \frac{\sum y_i - w \sum x_i}{n}
-$$</span>
-
-<div class="left-aligned-list">
+$$b = \frac{\sum y_i - w \sum x_i}{n}$$
 
 **Where:**
-- <span class="inline-math">$$x_i$$</span> = height of the i-th person
-- <span class="inline-math">$$y_i$$</span> = weight of the i-th person
-- <span class="inline-math">$$n$$</span> = number of data points
-- <span class="inline-math">$$\Sigma$$</span> = summation (e.g., <span class="inline-math">$$\Sigma x_i = x_1 + x_2 + ... + x_n$$</span>)
-
-</div>
+- $x_i$ = height of the i-th person
+- $y_i$ = weight of the i-th person
+- $n$ = number of data points
+- $\Sigma$ = summation (e.g., $\Sigma x_i = x_1 + x_2 + ... + x_n$)
 
 
 Step 4: Plug in the Values
@@ -98,16 +98,16 @@ Let’s calculate the required sums:
 
 | Height <span class="inline-math">$$(x)$$</span> | Weight <span class="inline-math">$$(y)$$</span> | <span class="inline-math">$$x \cdot y$$</span> | <span class="inline-math">$$x^2$$</span> | 
 |-------------------------------------------------|-------------------------------------------------|------------------------------------------------|------------------------------------------| 
+| 160                                             | 50                                              | 8000                                           | 25600                                    |       
 | 165                                             | 55                                              | 9075                                           | 27225                                    |       
 | 170                                             | 60                                              | 10200                                          | 28900                                    |        
 | 175                                             | 65                                              | 11375                                          | 30625                                    |        
 | 180                                             | 70                                              | 12600                                          | 32400                                    |      
-| **<span class="inline-math">$$\Sigma$$</span>** | **830**                                         | **300**                                        | **51250**                                |
+| **<span class="inline-math">$$\Sigma$$</span>** | **850**                                         | **300**                                        | **51250**                                | **144750**                               |
 
 
 
 
-<div style="text-align: left;">
 
 - <span class="inline-math">$$n = 5$$</span>
 - <span class="inline-math">$$\sum x_i = 850$$</span>
@@ -115,7 +115,6 @@ Let’s calculate the required sums:
 - <span class="inline-math">$$\sum x_i y_i = 51250$$</span>
 - <span class="inline-math">$$\sum x_i^2 = 144750$$</span>
 
-</div>
 
 ## Calculate slope <span class="inline-math">$$w$$</span>:
 
