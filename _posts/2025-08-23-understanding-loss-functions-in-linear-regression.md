@@ -1,10 +1,16 @@
 ---
-layout: post
 title: Understanding Loss Functions in Linear Regression
 header:
   teaser: /assets/images/unsplash-image-3.jpg
-categories: [machine-learning]
-tags: [linear-regression, statistics, algorithms]
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - linear regression
+  - machine learning
+  - mathematics
+  - statistics
+mathjax: true
 ---
 
 # Understanding Loss Functions in Linear Regression
