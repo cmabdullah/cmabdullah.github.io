@@ -1,15 +1,12 @@
 ---
 layout: splash
-title: ""
+title: "HIIII, I'm Abdullah"
 permalink: /articles
 classes: wide
 header:
   overlay_color: "#2c3e50"
   overlay_filter: "0.5"
-  actions:
-    - label: "Articles — {{ site.posts.size }} articles"
-      url: "#"
-excerpt: "A collection of long form writing and tutorials — mostly about web development and design.<br><br>For shorter, more regular tidbits — peruse the **notes section**.<br><br>**Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Web-development](#) • [Static Sites](#)"
+excerpt: "A collection of long form writing and tutorials — mostly about web development and design.<br><br>For shorter, more regular tidbits — peruse the **notes section**.<br><br>**Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Static Sites](#)"
 ---
 
 <!-- Articles Grid Section -->
