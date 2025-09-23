@@ -6,10 +6,10 @@ hidden: true
 permalink: /
 classes: wide
 header:
-#  overlay_color: "#2c3e50"
-#  overlay_filter: "0.5"      # transparency level
-  overlay_image: "assets/images/mm-home-page-feature.jpg"
-  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
+  overlay_color: "#2c3e50"
+  overlay_filter: "0.5"      # transparency level
+#  overlay_image: "assets/images/mm-home-page-feature.jpg"
+#  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 #  actions:
 #    - label: "Download"
 #      url: "https://github.com/mmistakes/minimal-mistakes/"
