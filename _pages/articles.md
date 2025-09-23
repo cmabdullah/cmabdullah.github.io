@@ -1,7 +1,7 @@
 ---
 layout: splash
 title: "Progress over perfection"
-permalink: /articles
+permalink: /articles/
 classes: wide
 header:
   overlay_color: "#2c3e50"
