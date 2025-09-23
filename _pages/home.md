@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Hello, I'm Abdullah"
+title: "Engineering Solutions That Work"
 subtitle: "The personal website and blog of Abdullah"
 hidden: true
 permalink: /
@@ -8,13 +8,21 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.2"      # transparency level
   overlay_image: /assets/images/mm-home-page-feature.jpg
-#  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
-  actions:
-    - label: "Download"
-      url: "https://github.com/mmistakes/minimal-mistakes/"
+  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
+#  actions:
+#    - label: "Download"
+#      url: "https://github.com/mmistakes/minimal-mistakes/"
+#    - label: "Download"
+#      url: "https://github.com/mmistakes/minimal-mistakes/"
+#    - label: "Email"
+#      icon: "fas fa-fw fa-envelope-square"
+#      url: "mailto:billyrick@rick.com"
+#excerpt: >
+#  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
+#  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
 excerpt: >
-  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
+  Dive into practical projects, code, and solutions that push boundaries.<br><br>
+  **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
 intro:
   - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
 

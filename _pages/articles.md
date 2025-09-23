@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "HIIII, I'm Abdullah"
+title: "Progress over perfection"
 permalink: /articles
 classes: wide
 header:
@@ -8,10 +8,8 @@ header:
   overlay_filter: "0.5"
 #excerpt: "A collection of long form writing and tutorials — mostly about web development and design.<br><br>For shorter, more regular tidbits — peruse the **notes section**.<br><br>**Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Static Sites](#)"
 excerpt: >
-  A collection of long form writing and tutorials — mostly about web development and design.<br><br>
-  For shorter, more regular tidbits — peruse the **notes section**.<br><br>
-  **Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Static Sites](#)"
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
+  Build projects that matter, with insights drawn from **real-world experience**.<br><br>
+  **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
 ---
 
 <!-- Articles Grid Section -->
