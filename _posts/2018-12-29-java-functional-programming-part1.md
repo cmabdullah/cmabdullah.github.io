@@ -1,16 +1,16 @@
 ---
-layout: post
 title: জাভা ফাংশনাল প্রোগ্রামিং পর্ব ১
-
-[//]: # (description: >)
-
-[//]: # ( Transmission Control Protocol)
-sitemap: false
-hide_last_modified: true
+header:
+  teaser: /assets/img/function-1.jpeg
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - linear regression
+  - machine learning
+  - mathematics
+  - statistics
 ---
-
-![800x400](/assets/img/function-1.jpeg "Large example image")
-
 আমরা যদি ফাংশনাল পদ্ধতিতে প্রোগ্রাম লিখতে চাই তবে আমাদের কোড স্টাইলে কিছু পরিবর্তন আনতে হবে। সাধারনত C++. Java, C#, Python ভাষা গুলোর জন্ম মাল্টি থ্রেড প্রসেসর বের হওয়ার আগের, তাই এসব ভাষা গুলোতে ইম্পারেটিভ ও ওওপি পদ্ধতি সাপোর্ট করত। এখন সব প্রোগ্রামিং ল্যাঙ্গুয়েজে ফাংশনাল পদ্ধতিতে প্রোগ্রাম লেখা যায়। আমরা কিছু কী কনসেপ্ট শিখব যেটি আমাদের ফাংশনাল পদ্ধতিতে প্রোগ্রাম লিখতে সাহায্য করবে।
 
 1. Be Declarative

@@ -1,11 +1,15 @@
 ---
-layout: post
 title: Reactive Programming with Project Reactor
-categories: [programming]
-tags: [project-reactor, flux, mono, reactive-streams]
-image: '/assets/img/reactive.jpeg'
+header:
+  teaser: /assets/img/reactive.jpeg
+categories:
+  - Reactive Spring
+tags:
+  - project-reactor
+  - flux
+  - mono
+  - reactive-streams
 ---
-
 ## প্রজেক্ট রিয়েক্টর প্রথম পর্ব। Reactive Systems এর মূল লক্ষ্য কী?
 
 স্বল্প রিসোর্স নিয়ে বেশি পরিমাণ কাজ করা, রিএক্টিভ প্রসেসিং এর মাধ্যমে অধিক পরিমাণে কনকারেন্ট রিকোয়েস্ট স্বল্প রিসোর্স (মাইক্রসার্ভিস/অ্যাপ্লিকেশন) ইন্সটান্স দিয়ে সার্ভ করা।

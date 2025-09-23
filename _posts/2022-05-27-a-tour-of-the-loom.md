@@ -1,11 +1,15 @@
 ---
-layout: post
 title: A Tour of the Loom
-categories: [programming]
-tags: [virtual-threads, concurrency, project-loom]
-image: '/assets/img/loom.jpg'
+header:
+  teaser: /assets/img/loom.jpg
+categories:
+  - Java
+  - Programming
+tags:
+  - virtual-threads
+  - concurrency
+  - project-loom
 ---
-
 The main goal of this project is to achieve high throughput with lightweight concurrency with minimal effort in writing code.
 
 Why Virtual Thread? virtual thread requires cheap resources compared to traditional Platform Thread which is the wrapper of OS thread. Besides virtual thread is a simple implementation of JDK threads, that are not OS threads.

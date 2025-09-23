@@ -1,16 +1,16 @@
 ---
-layout: post
-title: খুব সহজেই বানিয়ে ফেলুন TCP সার্ভার
-
-[//]: # (description: >)
-
-[//]: # ( Transmission Control Protocol)
-sitemap: false
-hide_last_modified: true
+title: "খুব সহজেই বানিয়ে ফেলুন TCP সার্ভার"
+header:
+  teaser: /assets/img/img.png
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - linear regression
+  - machine learning
+  - mathematics
+  - statistics
 ---
-
-![800x400](/assets/img/img.png "Large example image")
-
 জাভা একটি প্রিমিয়ার ল্যাঙ্গুয়েজ নেটওয়ার্ক প্রোগ্রামিং এর জন্য। সকেট প্রোগ্রামিং এর মধ্যে অন্যতম। বিশেষ করে যারা ক্লায়েন্ট সার্ভার বেসড এপ্লিকেশন কাজ করেন।
 
 import java.net.*; প্যাকেজ কিছু class এবং interface সরবরাহ করে নেটওয়ার্কিং সংক্রান্ত প্রোগ্রাম লিখার জন্য। TCP/IP সকেট এর মাধ্যমে প্রোগ্রামার অন্য নেটওয়ার্ক এর সাথে যোগাযোগ করতে পারে।

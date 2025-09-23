@@ -1,19 +1,15 @@
 ---
-layout: post
 title: Dynamically Provisioning Persistent Volumes
 header:
-  teaser: /assets/images/unsplash-image-5.jpg
-categories: [devops]
-tags: [persistent-volumes, kubernetes, storage]
-image: '/assets/img/pv.png'
+  teaser: /assets/img/pv.png
+categories:
+  - DevOps
+  - Kubernetes
+tags:
+  - persistent-volumes
+  - kubernetes
+  - storage
 ---
-
-# Dynamically Provisioning Persistent Volumes
-
-
-![Persistent Volume](/assets/img/pv.png)
-
-
 ## StorageClass
 Storage Classes simplify the creation and management of Persistent Volumes 
 by automatically provisioning storage resources whenever they are required.

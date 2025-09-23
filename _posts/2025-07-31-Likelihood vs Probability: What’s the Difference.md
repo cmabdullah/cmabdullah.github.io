@@ -1,5 +1,13 @@
-# Likelihood vs. Probability: What’s the Difference (and Why It Matters in Machine Learning)?
-
+---
+title: Likelihood vs. Probability, What’s the Difference (and Why It Matters in Machine Learning)?
+header:
+  teaser: /assets/images/unsplash-image-4.jpg
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - probability
+---
 > “Given a model, what’s the chance of this data?” vs. “Given this data, what’s the best model?”
 
 Whether you're diving into machine learning, statistics, or even just curious about coin tosses, understanding the difference between probability and likelihood is foundational — yet often misunderstood.

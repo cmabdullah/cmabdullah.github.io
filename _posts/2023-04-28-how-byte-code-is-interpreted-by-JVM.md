@@ -1,8 +1,16 @@
 ---
-image: '/assets/img/bytecode.jpg'
+title: How Byte code is interpreted by JVM?
+header:
+  teaser: /assets/img/bytecode.jpg
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - linear regression
+  - machine learning
+  - mathematics
+  - statistics
 ---
-### How Byte code is interpreted by JVM?
-
 high-level language like Java requires the compiler to translate source code to highly optimized byte code,
 then byte code is interpreted by the JVM interpreter. Bytecode is generated from javac compiler and produced as a .class file.
 
