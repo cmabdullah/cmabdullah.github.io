@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "About"
+    url: /about/
+  - title: "Articles"
+    url: /articles/
+#  - title: "Notes"
+#    url: /collection-archive/
+#  - title: "Work"
+#    url: /work/
