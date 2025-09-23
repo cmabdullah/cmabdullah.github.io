@@ -4,9 +4,10 @@ title: "Engineering Solutions That Work"
 subtitle: "The personal website and blog of Abdullah"
 hidden: true
 permalink: /
+classes: wide
 header:
-  overlay_color: "#000"
-  overlay_filter: "0.2"      # transparency level
+  overlay_color: "#2c3e50"
+  overlay_filter: "0.5"      # transparency level
   overlay_image: "assets/images/mm-home-page-feature.jpg"
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 #  actions:
@@ -23,8 +24,6 @@ header:
 excerpt: >
   Dive into practical projects, code, and solutions that push boundaries.<br><br>
   **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
-intro:
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
 
 feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
