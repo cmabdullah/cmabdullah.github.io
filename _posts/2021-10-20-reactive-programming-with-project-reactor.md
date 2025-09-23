@@ -1,6 +1,7 @@
 ---
 title: Reactive Programming with Project Reactor
 header:
+  image: /assets/img/reactive.jpeg
   teaser: /assets/img/reactive.jpeg
 categories:
   - Reactive Spring

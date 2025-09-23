@@ -1,6 +1,7 @@
 ---
 title: প্রজেক্ট রিয়েক্টর দ্বিতীয় পর্ব
 header:
+  image: /assets/img/consumerization_article_006.jpeg
   teaser: /assets/img/consumerization_article_006.jpeg
 categories:
   - Machine Learning

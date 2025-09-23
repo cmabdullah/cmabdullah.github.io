@@ -1,6 +1,7 @@
 ---
 title: জাভা ফাংশনাল প্রোগ্রামিং পর্ব ১
 header:
+  image: /assets/img/function-1.jpeg
   teaser: /assets/img/function-1.jpeg
 categories:
   - Machine Learning

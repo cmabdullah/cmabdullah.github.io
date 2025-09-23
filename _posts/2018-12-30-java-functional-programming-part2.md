@@ -1,6 +1,7 @@
 ---
 title: জাভা ফাংশনাল প্রোগ্রামিং পর্ব ২ (কালেকশন এ পি আই)
 header:
+  image: /assets/img/function-2.jpeg
   teaser: /assets/img/function-2.jpeg
 categories:
   - Machine Learning

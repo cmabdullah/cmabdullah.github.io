@@ -1,6 +1,7 @@
 ---
 title: "খুব সহজেই বানিয়ে ফেলুন TCP সার্ভার"
 header:
+  image: /assets/img/img.png
   teaser: /assets/img/img.png
 categories:
   - Machine Learning

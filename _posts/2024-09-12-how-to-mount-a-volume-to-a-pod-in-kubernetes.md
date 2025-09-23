@@ -1,7 +1,9 @@
 ---
 title: How to mount a volume to a pod in Kubernetes
 header:
-  teaser: /assets/images/unsplash-image-4.jpg
+  image: /assets/images/unsplash-image-9.jpg
+  teaser: /assets/images/unsplash-image-9.jpg # 👈 thumbnail for list pages
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
   - DevOps
   - Kubernetes

@@ -1,7 +1,9 @@
 ---
 title: Understanding Loss Functions in Linear Regression
 header:
+  image: /assets/images/unsplash-image-3.jpg
   teaser: /assets/images/unsplash-image-3.jpg
+  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
   - Data Science
@@ -12,8 +14,6 @@ tags:
   - statistics
 mathjax: true
 ---
-
-# Understanding Loss Functions in Linear Regression
 
 In machine learning, loss is the numerical heartbeat that tells us how well our model is performing.
 The fundamental goal of training any machine learning model is simple: minimize this loss to make our predictions as accurate as possible.

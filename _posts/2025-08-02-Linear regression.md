@@ -1,7 +1,9 @@
 ---
 title: "Linear Regression: A Complete Guide with Examples"
 header:
-  teaser: /assets/images/unsplash-image-2.jpg
+  image: /assets/images/unsplash-image-5.jpg
+  teaser: /assets/images/unsplash-image-5.jpg
+  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
   - Data Science

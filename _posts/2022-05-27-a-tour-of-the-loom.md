@@ -1,6 +1,7 @@
 ---
 title: A Tour of the Loom
 header:
+  image: /assets/img/loom.jpg
   teaser: /assets/img/loom.jpg
 categories:
   - Java

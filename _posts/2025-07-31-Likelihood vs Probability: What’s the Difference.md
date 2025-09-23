@@ -1,7 +1,9 @@
 ---
 title: Likelihood vs. Probability, What’s the Difference (and Why It Matters in Machine Learning)?
 header:
-  teaser: /assets/images/unsplash-image-4.jpg
+  image: /assets/images/unsplash-image-8.jpg
+  teaser: /assets/images/unsplash-image-8.jpg
+  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
   - Data Science

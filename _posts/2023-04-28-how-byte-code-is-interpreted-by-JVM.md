@@ -1,6 +1,7 @@
 ---
 title: How Byte code is interpreted by JVM?
 header:
+  image: /assets/img/bytecode.jpg
   teaser: /assets/img/bytecode.jpg
 categories:
   - Machine Learning

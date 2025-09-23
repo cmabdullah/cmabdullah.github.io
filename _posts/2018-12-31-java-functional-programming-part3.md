@@ -1,6 +1,7 @@
 ---
 title: জাভা ফাংশনাল প্রোগ্রামিং পর্ব ৩ (ল্যামডা এক্সপ্রেশন, স্ট্রিম এ পি আই)
 header:
+  image: /assets/img/function-3.jpeg
   teaser: /assets/img/function-3.jpeg
 categories:
   - Machine Learning

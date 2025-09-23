@@ -1,6 +1,7 @@
 ---
 title: Dynamically Provisioning Persistent Volumes
 header:
+  image: /assets/img/pv.png
   teaser: /assets/img/pv.png
 categories:
   - DevOps
