@@ -7,7 +7,7 @@ permalink: /
 header:
   overlay_color: "#000"
   overlay_filter: "0.2"      # transparency level
-  overlay_image: /assets/images/mm-home-page-feature.jpg
+  overlay_image: "/assets/images/mm-home-page-feature.jpg"
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 #  actions:
 #    - label: "Download"
