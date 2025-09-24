@@ -7,20 +7,7 @@ permalink: /
 classes: wide
 header:
   overlay_color: "#2c3e50"
-  overlay_filter: "0.5"      # transparency level
-#  overlay_image: "assets/images/mm-home-page-feature.jpg"
-#  caption: "Photo credit: [Unsplash](https://unsplash.com/)"
-#  actions:
-#    - label: "Download"
-#      url: "https://github.com/mmistakes/minimal-mistakes/"
-#    - label: "Download"
-#      url: "https://github.com/mmistakes/minimal-mistakes/"
-#    - label: "Email"
-#      icon: "fas fa-fw fa-envelope-square"
-#      url: "mailto:billyrick@rick.com"
-#excerpt: >
-#  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
-#  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.27.3">Latest release v4.27.3</a></small>
+  overlay_filter: "0.5"
 excerpt: >
   Dive into practical projects, code, and solutions that push boundaries.<br><br>
   **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
