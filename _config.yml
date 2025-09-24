@@ -20,7 +20,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "FUTURE CRAFT"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "ABDULLAH KHAN"
+name                     : "KHAN ABDULLAH"
 description              : "An amazing website."
 url                      : "https://cmabdullah.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -110,18 +110,17 @@ analytics:
     tracking_id          : "G-C16J6DB4J1" # Your GA4 Measurement ID
     anonymize_ip         : false # true, false (default)
 
-
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "KHAN ABDULLAH"
+  avatar           : "/assets/images/logo.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Passionate about coding, problem-solving, and turning complex ideas into practical solutions."
+  location         : "Dhaka City, Bangladesh"
+  email            : cmabdullah21@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:cmabdullah21@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -133,7 +132,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/cmabdullah"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -149,10 +148,10 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/cmabdullah"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
+#      url: "https://github.com/cmabdullah"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
       # url:
