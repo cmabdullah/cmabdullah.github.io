@@ -1,7 +1,6 @@
 ---
 layout: splash
 title: "Engineering Solutions That Work"
-subtitle: "The personal website and blog of Abdullah"
 permalink: /
 classes: wide
 header:
@@ -10,29 +9,6 @@ header:
 excerpt: >
   Dive into practical projects, code, and solutions that push boundaries.<br><br>
   **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
-
-feature_row:
-  - image_path: /assets/images/mm-customizable-feature.png
-    alt: "customizable"
-    title: "Tech Writing"
-    excerpt: "Articles on Java, Cloud, and IoT. Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
-    url: "/articles/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
-  - image_path: /assets/images/mm-responsive-feature.png
-    alt: "fully responsive"
-    title: "Projects"
-    excerpt: "See what I'm building and experimenting with. Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
-    url: "/projects/"
-    btn_class: "btn--primary"
-    btn_label: "Explore"
-  - image_path: /assets/images/mm-free-feature.png
-    alt: "100% free"
-    title: "Study Log"
-    excerpt: "See what I'm building and experimenting with. Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
-    url: "/docs/license/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
 ---
 
 <div class="recent-posts" style="width: 50%; float: left; padding-right: 1rem;">
