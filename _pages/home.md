@@ -2,7 +2,6 @@
 layout: splash
 title: "Engineering Solutions That Work"
 subtitle: "The personal website and blog of Abdullah"
-hidden: true
 permalink: /
 classes: wide
 header:
