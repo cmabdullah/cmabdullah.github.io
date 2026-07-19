@@ -8,3 +8,14 @@ main:
 #    url: /collection-archive/
 #  - title: "Work"
 #    url: /work/
+
+# LangGraph4j series sidebar nav
+langgraph4j-series:
+  - title: "LangGraph4j Series"
+    children:
+      - title: "Part 1: State Management, Channels, and Human-in-the-Loop"
+        url: /ai/State-Management/
+      - title: "Part 2: Node Hooks — applyBefore, applyWrap, applyAfter"
+        url: /ai/Node-Hooks-in-LangGraph4j/
+      - title: "Part 3: Framework-Agnostic Nodes — The Adapter Pattern"
+        url: /ai/Framework-Agnostic-Nodes-in-LangGraph4j/

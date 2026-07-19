@@ -18,6 +18,27 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main-light.css' | relative_url }}" id="theme-light-stylesheet" disabled>
+<script>
+  (function () {
+    var STORAGE_KEY = 'theme-preference';
+    var lightSheet = document.getElementById('theme-light-stylesheet');
+
+    function resolve(pref) {
+      if (pref === 'system') {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      return pref || 'dark';
+    }
+
+    function apply(pref) {
+      lightSheet.disabled = resolve(pref) !== 'light';
+    }
+
+    window.__applyThemePreference = apply;
+    apply(localStorage.getItem(STORAGE_KEY));
+  })();
+</script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 

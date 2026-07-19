@@ -1,0 +1,154 @@
+// site-specific overrides shared by both the dark and light compiled
+// stylesheets (assets/css/main.scss and assets/css/main-light.scss)
+
+// splash pages (home, articles) render post grids outside the .archive
+// wrapper, which is what normally clears the floated .grid__item cards
+.entries-grid {
+  @include clearfix;
+}
+
+// 3-column grid (matching mademistakes.com) instead of the theme's default 4,
+// so each card - and its thumbnail - is proportionally wider/taller
+.grid__item {
+  @include breakpoint($medium) {
+    width: span(4 of 12);
+
+    &:nth-child(3n + 1) {
+      clear: both;
+      margin-inline-start: 0;
+    }
+
+    &:nth-child(3n + 2),
+    &:nth-child(3n + 3) {
+      clear: none;
+      margin-inline-start: gutter(1 of 12);
+    }
+  }
+
+  // the theme nests max-height: 200px/120px on .archive__item-teaser inside
+  // .grid__item (specificity 0,2,0), silently clipping it short regardless of
+  // our aspect-ratio fix below - a flat .archive__item-teaser override (0,1,0)
+  // can never beat that on specificity, so it has to be overridden at the
+  // same nesting level
+  .archive__item-teaser {
+    max-height: none;
+  }
+}
+
+// thumbnail corners: the theme's default $border-radius (4px) barely reads
+// on a ~300px-wide teaser image, so round it more visibly here instead
+.archive__item-teaser {
+  border-radius: min(1.5rem, 2vw);
+
+  img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// blog titles: serif heading in the main text color (not link-blue), no
+// underline at rest, underline only on hover
+.archive__item-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+
+  a {
+    color: $text-color;
+  }
+}
+
+.archive__item-title a,
+.page__title a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// flat, image-free hero that follows the active color-scheme skin instead of
+// a hardcoded overlay_color (opt in with header.overlay_color: "theme").
+// The stock --overlay variant hardcodes white text/borders for photo
+// backgrounds, so those need overriding here too or they vanish on light bg.
+.page__hero--themed {
+  // a subtle panel shade nudged away from the body background (lighter in
+  // dark mode, darker/grayer in light mode) rather than matching it exactly
+  background-color: mix($text-color, $background-color, 8%);
+
+  a,
+  .page__title,
+  .page__meta,
+  .page__lead,
+  .btn {
+    color: $text-color;
+    text-shadow: none;
+  }
+
+  .btn--light-outline {
+    border-color: $text-color;
+  }
+
+  .page__title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+}
+
+// two-column hero (home page): a small label on the left, title/lead/actions
+// on the right - matches mademistakes.com's split hero layout
+.page__hero-split {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  @include breakpoint($medium) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3em;
+  }
+}
+
+.page__hero-eyebrow {
+  flex-shrink: 0;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $muted-text-color;
+
+  @include breakpoint($medium) {
+    flex-basis: 200px;
+  }
+}
+
+.page__hero-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.page__hero-actions-label {
+  margin-inline-end: 0.75em;
+  color: $muted-text-color;
+  font-size: $type-size-6;
+}
+
+// footer light/dark/system color-scheme switcher
+.theme-switch {
+  margin-bottom: 1em;
+  font-size: $type-size-7;
+
+  &__label {
+    margin-inline-end: 0.5em;
+    color: $muted-text-color;
+  }
+
+  select {
+    background-color: $background-color;
+    color: $text-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 0.25em 0.5em;
+  }
+}
