@@ -1,0 +1,44 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for collection in site.collections %}
+    {% if collection.output %}
+      {% for document in collection.docs %}
+        {% unless document.sitemap == false %}
+  <url>
+    <loc>{{ document.url | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+          {% assign modified = document.last_modified_at | default: document.date %}
+          {% if modified %}
+    <lastmod>{{ modified | date_to_xmlschema }}</lastmod>
+          {% endif %}
+  </url>
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  {% for content_page in site.html_pages %}
+    {% unless content_page.sitemap == false or content_page.url == '/404.html' %}
+  <url>
+    <loc>{{ content_page.url | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+      {% if content_page.last_modified_at %}
+    <lastmod>{{ content_page.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% endif %}
+  </url>
+    {% endunless %}
+  {% endfor %}
+  {% assign indexed_extensions = '.htm,.html,.xhtml,.pdf' | split: ',' %}
+  {% for static_file in site.static_files %}
+    {% if indexed_extensions contains static_file.extname %}
+      {% unless static_file.sitemap == false or static_file.name == '404.html' %}
+  <url>
+    <loc>{{ static_file.path | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ static_file.modified_time | date_to_xmlschema }}</lastmod>
+  </url>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+</urlset>
