@@ -4,12 +4,11 @@ title: "Progress over perfection"
 permalink: /articles/
 classes: wide
 header:
-  overlay_color: "#2c3e50"
-  overlay_filter: "0.5"
-#excerpt: "A collection of long form writing and tutorials — mostly about web development and design.<br><br>For shorter, more regular tidbits — peruse the **notes section**.<br><br>**Related topics:** [Time-lapse](#) • [Drawing](#) • [Tutorials](#) • [Static Sites](#)"
+  overlay_color: "theme"
+  eyebrow: "Articles"
+  eyebrow_count: true
 excerpt: >
-  Build projects that matter, with insights drawn from **real-world experience**.<br><br>
-  **Related topics:** [Engineering](#) • [DevOps](#) • [Machine Learning](#)
+  Build projects that matter, with insights drawn from **real-world experience**.
 ---
 
 <!-- Articles Grid Section -->
