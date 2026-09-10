@@ -6,6 +6,7 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Design Pattern
+  - Java
 tags:
   - design pattern
 ---
@@ -132,6 +133,6 @@ The pattern earns its extra classes only when whole families genuinely change to
 
 **References**
 
-- [Abstract Factory — Refactoring Guru](https://refactoring.guru/design-patterns/abstract-factory)
-- *Design Patterns: Elements of Reusable Object-Oriented Software* — Gamma, Helm, Johnson, Vlissides (the original GoF Abstract Factory, pp. 87–95)
-- *Head First Design Patterns* (2nd Edition), Chapter 4: "The Factory Pattern" — Eric Freeman, Elisabeth Robson
+- [Abstract Factory, Refactoring Guru](https://refactoring.guru/design-patterns/abstract-factory)
+- *Design Patterns: Elements of Reusable Object-Oriented Software*, Gamma, Helm, Johnson, Vlissides (the original GoF Abstract Factory, pp. 87–95)
+- *Head First Design Patterns* (2nd Edition), Chapter 4: "The Factory Pattern", Eric Freeman, Elisabeth Robson

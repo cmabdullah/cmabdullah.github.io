@@ -10,7 +10,9 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item">
+{% capture card_cats %}{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}{% endcapture %}
+{% capture card_tags %}{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}{% endcapture %}
+<div class="{{ include.type | default: 'list' }}__item" data-cats="{{ card_cats | strip }}" data-tags="{{ card_tags | strip }}">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">

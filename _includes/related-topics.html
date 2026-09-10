@@ -1,0 +1,11 @@
+{% if page.categories[0] or page.tags[0] %}
+  <p class="page__related-topics">
+    <span class="related-topics__label">{{ site.data.ui-text[site.locale].related_topics_label | default: "Related topics:" }}</span>
+    {% for category in page.categories %}
+      <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}" class="topic-pill">{{ category }}</a>
+    {% endfor %}
+    {% for tag in page.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="topic-pill">{{ tag }}</a>
+    {% endfor %}
+  </p>
+{% endif %}

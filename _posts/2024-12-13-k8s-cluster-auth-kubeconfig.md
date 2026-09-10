@@ -1,5 +1,5 @@
 ---
-title: "Cluster Auth and kubeconfig — Kubernetes Internals #14"
+title: "Cluster Auth and kubeconfig (Kubernetes Internals #16)"
 header:
   overlay_image: /assets/images/unsplash-gallery-image-3.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - authentication
@@ -72,8 +72,8 @@ Always confirm where you are before anything destructive:
 
 > kubectl config current-context
 
-[Configure Access to Clusters — Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
+[Configure Access to Clusters, Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
 
 ---
-*Kubernetes Internals series — Part 14 of 16.*
-*← Previous: [Jobs, Scaling and Ingress](/devops/k8s-jobs-scaling-ingress/) · Next: [RBAC — Roles, Bindings, Access](/devops/k8s-rbac/) →*
+*Kubernetes Internals series, Part 16 of 18.*
+*← Previous: [Jobs, Scaling and Ingress](/devops/k8s-jobs-scaling-ingress/) · Next: [RBAC, Roles, Bindings, Access](/devops/k8s-rbac/) →*

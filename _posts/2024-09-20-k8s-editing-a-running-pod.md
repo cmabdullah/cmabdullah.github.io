@@ -1,5 +1,5 @@
 ---
-title: "Editing a Running Pod — Kubernetes Internals #2"
+title: "Editing a Running Pod (Kubernetes Internals #2)"
 header:
   overlay_image: /assets/images/blog_botanical_03_fresh_spring_leaves_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - pods
@@ -56,8 +56,8 @@ you. Verify the running definition with:
 
 > kubectl get pod nginx -o yaml
 
-[Managing objects — Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/)
+[Managing objects, Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/)
 
 ---
-*Kubernetes Internals series — Part 2 of 16.*
+*Kubernetes Internals series, Part 2 of 18.*
 *← Previous: [Pods: Create, Inspect, Delete](/devops/k8s-pods-create-inspect-delete/) · Next: [ReplicaSets](/devops/k8s-replicasets/) →*

@@ -1,5 +1,5 @@
 ---
-title: "Pods: Create, Inspect, Delete — Kubernetes Internals #1"
+title: "Pods: Create, Inspect, Delete (Kubernetes Internals #1)"
 header:
   overlay_image: /assets/images/blog_white_cherry_blossoms_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - pods
@@ -72,8 +72,8 @@ Confirm the Pod is running with:
 
 > kubectl get pods
 
-[Pods — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/)
+[Pods, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 ---
-*Kubernetes Internals series — Part 1 of 16.*
+*Kubernetes Internals series, Part 1 of 18.*
 *Overview: [kubectl Field Guide](/devops/kubectl-command-field-guide/) · Next: [Editing a Running Pod](/devops/k8s-editing-a-running-pod/) →*

@@ -1,0 +1,24 @@
+{% assign items_max = 0 %}
+{% for item in include.taxonomies %}
+  {% if item[1].size > items_max %}
+    {% assign items_max = item[1].size %}
+  {% endif %}
+{% endfor %}
+
+<nav class="taxonomy__nav" aria-label="{{ include.title | default: 'Browse topics' }}">
+  {% if include.title %}<h3 class="taxonomy__nav-title">{{ include.title }}</h3>{% endif %}
+  <ul class="taxonomy__nav-list">
+    {% for i in (1..items_max) reversed %}
+      {% for item in include.taxonomies %}
+        {% if item[1].size == i %}
+          <li>
+            <a href="#{{ item[0] | slugify }}">
+              <span class="taxonomy__nav-name">{{ item[0] }}</span>
+              <span class="taxonomy__count">{{ i }}</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</nav>

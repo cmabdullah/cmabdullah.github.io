@@ -1,5 +1,5 @@
 ---
-title: "Namespaces — Kubernetes Internals #6"
+title: "Namespaces (Kubernetes Internals #6)"
 header:
   overlay_image: /assets/images/blog_botanical_39_colorful_bougainvillea_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - namespaces
@@ -78,8 +78,8 @@ Switch your default namespace so you stop typing `--namespace`:
 
 > kubectl config set-context $(kubectl config current-context) --namespace=dev
 
-[Namespaces — Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+[Namespaces, Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 
 ---
-*Kubernetes Internals series — Part 6 of 16.*
-*← Previous: [Viewing Resources and Output Formats](/devops/k8s-viewing-resources/) · Next: [Building Images — the Docker Side](/devops/k8s-building-images/) →*
+*Kubernetes Internals series, Part 6 of 18.*
+*← Previous: [Viewing Resources and Output Formats](/devops/k8s-viewing-resources/) · Next: [Building Images, the Docker Side](/devops/k8s-building-images/) →*

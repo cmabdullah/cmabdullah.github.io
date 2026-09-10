@@ -12,8 +12,9 @@ sidebar:
   nav: "langgraph4j-series"
 categories:
   - AI
+  - Java
 tags:
-  - AI
+  - LangGraph4j
 ---
 
 [Last time]({% post_url 2026-07-19-State Management %}) we built a two-node LangGraph4j graph, a translator that pauses to
@@ -145,12 +146,12 @@ node's actual execution time not an approximation stitched together from a separ
 node throws, `throwable` is non-null and we log it. This is the one place in the hook lifecycle that can observe a failing
 node at all: `applyAfter` only receives a `lastResult` on success, because a thrown exception never reaches it.
 
-If you skip `applyWrap` entirely, the node still runs normally — `nodeAction.apply(...)` is exactly what LangGraph4j would
+If you skip `applyWrap` entirely, the node still runs normally, `nodeAction.apply(...)` is exactly what LangGraph4j would
 have called anyway. Implementing `WrapCall` means you're choosing to stand between the graph and the node, not that the
 node needs you to.
 
 Notice what the `.thenApply` block actually returns: not the node's raw `result`, but a **copy of it** (`new
-LinkedHashMap<>(result)`) with one extra key added — `SimpleState.NODE_TRACE`. This is the same "return a partial update"
+LinkedHashMap<>(result)`) with one extra key added, `SimpleState.NODE_TRACE`. This is the same "return a partial update"
 contract every node already follows. The hook is, from the channel's point of view, indistinguishable from the node itself.
 
 ## `applyAfter`: the last word on a successful result
@@ -180,7 +181,7 @@ node actually produced something. It is the wrong place for anything that needs 
 
 ## Wiring the hook into the graph
 
-Registration happens once, on the `StateGraph`, and covers every node — no changes inside `IntentClarifierNode` or
+Registration happens once, on the `StateGraph`, and covers every node, no changes inside `IntentClarifierNode` or
 `ResponderNode`:
 
 ```java
@@ -203,7 +204,7 @@ public StateGraph<SimpleState> build() throws GraphStateException {
 
 One instance, three registrations `NodeTraceHook` implements all three interfaces, so the same object is passed to
 `addBeforeCallNodeHook`, `addAfterCallNodeHook`, and `addWrapCallNodeHook`. Each `add...NodeHook` overload also has a
-`(String nodeId, ...)` variant, so a hook can be scoped to a single node instead of the whole graph — useful once you have
+`(String nodeId, ...)` variant, so a hook can be scoped to a single node instead of the whole graph, useful once you have
 more than one hook and don't want all of them running everywhere.
 
 ## Closing the loop with a channel
@@ -257,7 +258,7 @@ responder -> 0 ms
 
 Read it against the two-invocation trace from part one and every line has an explanation: `intentClarifier` runs twice
 because the graph is re-invoked after the human answers, and each of those two runs prints its own `starting` /
-`completed` / `produced keys` triplet — `applyBefore`, then `applyWrap`, then `applyAfter`. The `nodeTrace` key shows up in
+`completed` / `produced keys` triplet, `applyBefore`, then `applyWrap`, then `applyAfter`. The `nodeTrace` key shows up in
 `produced keys` for every node, because `applyWrap` adds it to every result on the way out. And the final `--- node trace
 ---` block is nothing but `SimpleState.NODE_TRACE`, accumulated by the appender channel across both graph invocations and
 both nodes, then printed once the conversation is over.
@@ -267,16 +268,16 @@ both nodes, then printed once the conversation is over.
 The same four properties that made channel-based state worth using in part one show up again here, from a different angle:
 
 **One cross-cutting concern, one place to change it.** Add timing to every future node in this graph by writing zero new
-lines inside those nodes — the hook already covers them.
+lines inside those nodes, the hook already covers them.
 
 **Nodes stay pure and untouched.** `IntentClarifierNode` and `ResponderNode` are identical to part one, byte for byte. A
 hook is opt-in instrumentation, not a change to the contract nodes have to satisfy.
 
 **Hooks speak the same language as nodes.** Every callback returns a partial state update merged through the schema's
-channels — the same rule from part one, applied to code that isn't a node at all.
+channels, the same rule from part one, applied to code that isn't a node at all.
 
 **The three callbacks map cleanly to three real needs.** Want to touch state before a node runs `applyBefore`. Want to
-measure or react to failure — `applyWrap`, the only one holding the actual call. Want to act only after a result exists
+measure or react to failure, `applyWrap`, the only one holding the actual call. Want to act only after a result exists
 `applyAfter`. You don't need all three for every hook; `NodeTraceHook` uses all three here mainly to show the difference
 side by side.
 
@@ -285,5 +286,5 @@ which is the point: in LangGraph4j, cross-cutting concerns are just another prod
 mechanism the graph already runs on.
 
 - Reference code: [Langgraph4jConsol](https://github.com/cmabdullah/Langgraph4jConsol)
-- Part one: [State Management in LangGraph4j — Channels, Reducers, and a Human-in-the-Loop Example]({% post_url 2026-07-19-State Management %})
-- Production reference: [`OTELWrapCallTraceHook.java`](https://github.com/langgraph4j/langgraph4j/blob/main/langgraph4j-opentelemetry/src/main/java/org/bsc/langgraph4j/otel/OTELWrapCallTraceHook.java) — langgraph4j's own `WrapCall` hook, using OpenTelemetry spans instead of `println`
+- Part one: [State Management in LangGraph4j, Channels, Reducers, and a Human-in-the-Loop Example]({% post_url 2026-07-19-State Management %})
+- Production reference: [`OTELWrapCallTraceHook.java`](https://github.com/langgraph4j/langgraph4j/blob/main/langgraph4j-opentelemetry/src/main/java/org/bsc/langgraph4j/otel/OTELWrapCallTraceHook.java), langgraph4j's own `WrapCall` hook, using OpenTelemetry spans instead of `println`

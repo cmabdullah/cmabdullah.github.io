@@ -1,5 +1,5 @@
 ---
-title: "Jobs, Scaling and Ingress — Kubernetes Internals #13"
+title: "Jobs, Scaling and Ingress (Kubernetes Internals #15)"
 header:
   overlay_image: /assets/images/blog_article_19_white_architecture_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - jobs
@@ -21,7 +21,7 @@ sidebar:
 Three everyday tasks that do not fit the "long-running Deployment" mould: run work to completion, resize a
 workload, and route external traffic in.
 
-### Jobs — run to completion
+### Jobs, run to completion
 
 A Deployment keeps Pods running forever; a **Job** runs a Pod until it succeeds, then stops.
 
@@ -71,8 +71,8 @@ kubectl get ingress
 
 > kubectl get jobs,svc,ingress
 
-[Jobs — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+[Jobs, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
 ---
-*Kubernetes Internals series — Part 13 of 16.*
+*Kubernetes Internals series, Part 15 of 18.*
 *← Previous: [Labels, Selectors and Rollouts](/devops/k8s-labels-selectors-rollouts/) · Next: [Cluster Auth and kubeconfig](/devops/k8s-cluster-auth-kubeconfig/) →*

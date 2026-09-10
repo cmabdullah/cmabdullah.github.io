@@ -1,5 +1,5 @@
 ---
-title: "Health Probes: Readiness and Liveness — Kubernetes Internals #19"
+title: "Health Probes: Readiness and Liveness (Kubernetes Internals #21)"
 header:
   overlay_image: /assets/images/blog_article_04_data_center_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - probes
@@ -75,8 +75,8 @@ recycled automatically.
 
 > kubectl get pod simple-app    # the READY column reflects the readiness probe
 
-[Configure Probes — Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+[Configure Probes, Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
 ---
-*Kubernetes Internals series — Part 19.*
+*Kubernetes Internals series, Part 21.*
 *← Previous: [Init Containers](/devops/k8s-init-containers/) · Next: [Deployment Strategies](/devops/k8s-deployment-strategies/) →*

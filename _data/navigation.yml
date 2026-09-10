@@ -4,6 +4,8 @@ main:
     url: /about/
   - title: "Articles"
     url: /articles/
+  - title: "Topics"
+    url: /categories/
 #  - title: "Notes"
 #    url: /collection-archive/
 #  - title: "Work"
@@ -15,11 +17,11 @@ kubernetes-series:
     children:
       - title: "Overview: kubectl Field Guide"
         url: /devops/kubectl-command-field-guide/
-      - title: "1. Pods — Create, Inspect, Delete"
+      - title: "1. Pods: Create, Inspect, Delete"
         url: /devops/k8s-pods-create-inspect-delete/
       - title: "2. Editing a Running Pod"
         url: /devops/k8s-editing-a-running-pod/
-      - title: "3. ReplicaSets — Scale and Manage"
+      - title: "3. ReplicaSets: Scale and Manage"
         url: /devops/k8s-replicasets/
       - title: "4. Deployments"
         url: /devops/k8s-deployments/
@@ -27,41 +29,49 @@ kubernetes-series:
         url: /devops/k8s-viewing-resources/
       - title: "6. Namespaces"
         url: /devops/k8s-namespaces/
-      - title: "7. Building Images — the Docker Side"
+      - title: "7. Building Images: the Docker Side"
         url: /devops/k8s-building-images/
       - title: "8. ConfigMaps"
         url: /devops/k8s-configmaps/
       - title: "9. Secrets"
         url: /devops/k8s-secrets/
-      - title: "10. Service Accounts"
+      - title: "10. Volumes: Mounting Storage to a Pod"
+        url: /devops/how-to-mount-a-volume-to-a-pod-in-kubernetes/
+      - title: "11. Persistent Volumes: Dynamic Provisioning"
+        url: /devops/persistent-volumes-dynamically-provisioning/
+      - title: "12. Service Accounts"
         url: /devops/k8s-service-accounts/
-      - title: "11. Taints and Tolerations"
+      - title: "13. Taints and Tolerations"
         url: /devops/k8s-taints-and-tolerations/
-      - title: "12. Labels, Selectors and Rollouts"
+      - title: "14. Labels, Selectors and Rollouts"
         url: /devops/k8s-labels-selectors-rollouts/
-      - title: "13. Jobs, Scaling and Ingress"
+      - title: "15. Jobs, Scaling and Ingress"
         url: /devops/k8s-jobs-scaling-ingress/
-      - title: "14. Cluster Auth and kubeconfig"
+      - title: "16. Cluster Auth and kubeconfig"
         url: /devops/k8s-cluster-auth-kubeconfig/
-      - title: "15. RBAC — Roles, Bindings, Access"
+      - title: "17. RBAC: Roles, Bindings, Access"
         url: /devops/k8s-rbac/
-      - title: "16. Handy Flags"
+      - title: "18. Handy Flags"
         url: /devops/k8s-handy-flags/
-  - title: "Part II — Workloads & Networking"
+  - title: "Part II: Workloads & Networking"
     children:
-      - title: "17. Multi-Container Pods — Sidecar, Adapter, Ambassador"
+      - title: "19. Multi-Container Pods: Sidecar, Adapter, Ambassador"
         url: /devops/k8s-multi-container-pods/
-      - title: "18. Init Containers"
+      - title: "20. Init Containers"
         url: /devops/k8s-init-containers/
-      - title: "19. Health Probes — Readiness and Liveness"
+      - title: "21. Health Probes: Readiness and Liveness"
         url: /devops/k8s-health-probes/
-      - title: "20. Deployment Strategies — Rolling, Blue-Green, Canary"
+      - title: "22. Deployment Strategies: Rolling, Blue-Green, Canary"
         url: /devops/k8s-deployment-strategies/
-      - title: "21. Jobs and CronJobs"
+      - title: "23. Jobs and CronJobs"
         url: /devops/k8s-jobs-and-cronjobs/
-      - title: "22. Services — ClusterIP, NodePort, LoadBalancer"
+      - title: "24. Services: ClusterIP, NodePort, LoadBalancer"
         url: /devops/k8s-services/
-      - title: "23. StatefulSets and Headless Services"
+      - title: "25. Ingress: Routing External Traffic"
+        url: /devops/ingress/
+      - title: "26. NetworkPolicy: Controlling Pod Traffic"
+        url: /devops/network-policy/
+      - title: "27. StatefulSets and Headless Services"
         url: /devops/k8s-statefulsets/
 
 # LangGraph4j series sidebar nav
@@ -70,7 +80,7 @@ langgraph4j-series:
     children:
       - title: "Part 1: State Management, Channels, and Human-in-the-Loop"
         url: /ai/State-Management/
-      - title: "Part 2: Node Hooks — applyBefore, applyWrap, applyAfter"
+      - title: "Part 2: Node Hooks (applyBefore, applyWrap, applyAfter)"
         url: /ai/Node-Hooks-in-LangGraph4j/
-      - title: "Part 3: Framework-Agnostic Nodes — The Adapter Pattern"
+      - title: "Part 3: Framework-Agnostic Nodes (The Adapter Pattern)"
         url: /ai/Framework-Agnostic-Nodes-in-LangGraph4j/

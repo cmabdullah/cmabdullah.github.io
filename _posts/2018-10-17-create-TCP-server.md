@@ -4,13 +4,9 @@ header:
   image: /assets/img/img.png
   teaser: /assets/img/img.png
 categories:
-  - Machine Learning
-  - Data Science
+  - Java
 tags:
-  - linear regression
-  - machine learning
-  - mathematics
-  - statistics
+  - Java Stream API
 ---
 জাভা একটি প্রিমিয়ার ল্যাঙ্গুয়েজ নেটওয়ার্ক প্রোগ্রামিং এর জন্য। সকেট প্রোগ্রামিং এর মধ্যে অন্যতম। বিশেষ করে যারা ক্লায়েন্ট সার্ভার বেসড এপ্লিকেশন কাজ করেন।
 

@@ -1,5 +1,5 @@
 ---
-title: "ReplicaSets: Scale and Manage — Kubernetes Internals #3"
+title: "ReplicaSets: Scale and Manage (Kubernetes Internals #3)"
 header:
   overlay_image: /assets/images/unsplash-image-3.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - replicaset
@@ -68,8 +68,8 @@ the two drift apart.
 
 > kubectl get replicaset
 
-[ReplicaSet — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+[ReplicaSet, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
 ---
-*Kubernetes Internals series — Part 3 of 16.*
+*Kubernetes Internals series, Part 3 of 18.*
 *← Previous: [Editing a Running Pod](/devops/k8s-editing-a-running-pod/) · Next: [Deployments](/devops/k8s-deployments/) →*

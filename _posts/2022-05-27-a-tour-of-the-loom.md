@@ -5,7 +5,7 @@ header:
   teaser: /assets/img/loom.jpg
 categories:
   - Java
-  - Programming
+#pinned: true          # ← add this 
 tags:
   - virtual-threads
   - concurrency

@@ -1,5 +1,5 @@
 ---
-title: "StatefulSets and Headless Services — Kubernetes Internals #23"
+title: "StatefulSets and Headless Services (Kubernetes Internals #27)"
 header:
   overlay_image: /assets/images/blog_article_18_chicago_skyline_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - statefulsets
@@ -88,8 +88,8 @@ That is how a replica addresses the primary directly, by a name that never chang
 
 > kubectl get statefulset mysql -o wide
 
-[StatefulSets — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+[StatefulSets, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 
 ---
-*Kubernetes Internals series — Part 23.*
-*← Previous: [Services](/devops/k8s-services/) · Overview: [kubectl Field Guide](/devops/kubectl-command-field-guide/)*
+*Kubernetes Internals series, Part 27.*
+*← Previous: [NetworkPolicy](/devops/network-policy/) · Overview: [kubectl Field Guide](/devops/kubectl-command-field-guide/)*

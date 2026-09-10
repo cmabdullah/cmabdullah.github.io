@@ -1,5 +1,5 @@
 ---
-title: "Init Containers — Kubernetes Internals #18"
+title: "Init Containers (Kubernetes Internals #20)"
 header:
   overlay_image: /assets/images/blog_generated_13_train_journey_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - pods
@@ -58,8 +58,8 @@ migration, so the main container can assume the world is ready.
 
 > kubectl describe pod blue    # watch the Init: phases
 
-[Init Containers — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
+[Init Containers, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
 
 ---
-*Kubernetes Internals series — Part 18.*
+*Kubernetes Internals series, Part 20.*
 *← Previous: [Multi-Container Pods](/devops/k8s-multi-container-pods/) · Next: [Health Probes](/devops/k8s-health-probes/) →*

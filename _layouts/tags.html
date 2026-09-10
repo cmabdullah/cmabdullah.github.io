@@ -4,4 +4,11 @@ layout: archive
 
 {{ content }}
 
-{% include posts-taxonomy.html taxonomies=site.tags %}
+<div class="taxonomy-grid">
+  <aside class="taxonomy-grid__rail">
+    {% include taxonomy-nav.html taxonomies=site.tags title="Tags" %}
+  </aside>
+  <div class="taxonomy-grid__main">
+    {% include posts-taxonomy.html taxonomies=site.tags %}
+  </div>
+</div>

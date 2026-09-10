@@ -1,5 +1,5 @@
 ---
-title: "ConfigMaps — Kubernetes Internals #8"
+title: "ConfigMaps (Kubernetes Internals #8)"
 header:
   overlay_image: /assets/images/blog_article_06_server_lights_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - configmap
@@ -95,8 +95,8 @@ Verify what a Pod actually received:
 
 > kubectl exec <pod> -- printenv APP_COLOR
 
-[ConfigMaps — Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/configmap/)
+[ConfigMaps, Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/configmap/)
 
 ---
-*Kubernetes Internals series — Part 8 of 16.*
-*← Previous: [Building Images — the Docker Side](/devops/k8s-building-images/) · Next: [Secrets](/devops/k8s-secrets/) →*
+*Kubernetes Internals series, Part 8 of 18.*
+*← Previous: [Building Images, the Docker Side](/devops/k8s-building-images/) · Next: [Secrets](/devops/k8s-secrets/) →*

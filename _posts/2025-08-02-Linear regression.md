@@ -6,7 +6,6 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
-  - Data Science
 tags:
   - linear regression
   - machine learning
@@ -33,10 +32,10 @@ Let’s say you want to predict someone's weight based on their height:
 
 Where:
 
-- $y$: is the label (target/output variable) — in your example, weight
-- $x$: is the feature (input variable) — in your example, height  
-- $w$: is the weight (slope) — how much $y$ changes when $x$ increases
-- $b$: is the bias (intercept) — the value of $y$ when $x = 0$
+- $y$: is the label (target/output variable), in your example, weight
+- $x$: is the feature (input variable), in your example, height  
+- $w$: is the weight (slope), how much $y$ changes when $x$ increases
+- $b$: is the bias (intercept), the value of $y$ when $x = 0$
 
 Find the best values of $w$ and $b$ such that the predicted values $\hat{y}$ are as close as possible to the actual values $y$.
 

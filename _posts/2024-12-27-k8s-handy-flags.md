@@ -1,5 +1,5 @@
 ---
-title: "Handy Flags — Kubernetes Internals #16"
+title: "Handy Flags (Kubernetes Internals #18)"
 header:
   overlay_image: /assets/images/blog_article_24_desert_horizon_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - kubectl
@@ -52,13 +52,13 @@ docker run --cap-add MAC_ADMIN ubuntu            # grant a capability
 ```
 
 That wraps the **core fundamentals**. For the high-level command reference that started it all, see the
-[kubectl Field Guide](/devops/kubectl-command-field-guide/) — and the series continues in **Part II —
+[kubectl Field Guide](/devops/kubectl-command-field-guide/), and the series continues in **Part II:
 Workloads & Networking**, starting with [Multi-Container Pods](/devops/k8s-multi-container-pods/).
 
 > kubectl <any-command> --help
 
-[kubectl Cheat Sheet — Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+[kubectl Cheat Sheet, Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ---
-*Kubernetes Internals series — Part 16 (end of core fundamentals).*
-*← Previous: [RBAC — Roles, Bindings, Access](/devops/k8s-rbac/) · Next: [Multi-Container Pods](/devops/k8s-multi-container-pods/) →*
+*Kubernetes Internals series, Part 18 (end of core fundamentals).*
+*← Previous: [RBAC, Roles, Bindings, Access](/devops/k8s-rbac/) · Next: [Multi-Container Pods](/devops/k8s-multi-container-pods/) →*

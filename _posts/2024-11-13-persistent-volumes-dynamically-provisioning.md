@@ -1,15 +1,16 @@
 ---
-title: Dynamically Provisioning Persistent Volumes
+title: "Persistent Volumes: Dynamic Provisioning (Kubernetes Internals #11)"
 header:
   image: /assets/img/pv.png
   teaser: /assets/img/pv.png
 categories:
   - DevOps
-  - Kubernetes
 tags:
   - persistent-volumes
   - kubernetes
   - storage
+sidebar:
+  nav: "kubernetes-series"
 ---
 ## StorageClass
 Storage Classes simplify the creation and management of Persistent Volumes 
@@ -92,3 +93,7 @@ You can check if the volume directory has been properly mounted within the pod.
 [Google Cloud Disks](https://cloud.google.com/compute/docs/disks)
 
 [image credit](https://refine.dev/blog/kubernetes-persistent-volumes/#basic-explanation-of-persistent-volumes-pv-and-persistent-volume-claims-pvc)
+
+---
+*Kubernetes Internals series, Part 11 of 18.*
+*← Previous: [Volumes](/devops/how-to-mount-a-volume-to-a-pod-in-kubernetes/) · Next: [Service Accounts](/devops/k8s-service-accounts/) →*

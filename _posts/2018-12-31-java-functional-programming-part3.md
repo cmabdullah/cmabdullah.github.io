@@ -4,13 +4,9 @@ header:
   image: /assets/img/function-3.jpeg
   teaser: /assets/img/function-3.jpeg
 categories:
-  - Machine Learning
-  - Data Science
+  - Java
 tags:
-  - linear regression
-  - machine learning
-  - mathematics
-  - statistics
+  - java Stream API
 ---
 একটা কালেকশন থেকে ইটারেশনের মাধ্যমে কিছু ভ্যালু পাওয়া সহজ। ধরুন একটা স্ট্রিং লিস্ট থেকে ছোট হাতের লিখা গুলোকে বড় হাতের লিখায় রূপান্তর করতে বলা হল, তাহলেতো আগের ভ্যালু গুলো হারাতে হবে এবং ইমিউটাবিলিটি নিয়ে প্রশ্ন আসবে যেমন Arrays.asList() মেথড যে ভ্যালু রিটার্ন করে সেগুলি পরিবর্তন করতে পারি না। আমরা ছোট হাতের লিখা গুলোকে বড় হাতের লিখায় রূপান্তর করে নতুন একটা লিস্টে রাখার মাধ্যমে এই সমস্যার সমাধান করতে পারি।
 

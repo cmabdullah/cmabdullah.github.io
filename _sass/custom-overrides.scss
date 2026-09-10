@@ -152,3 +152,251 @@
     padding: 0.25em 0.5em;
   }
 }
+
+// "Related topics:" pills shown at the top of each post (Phase 3)
+.page__related-topics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0 0 1.5em;
+  padding-bottom: 1.25em;
+  border-bottom: 1px solid $border-color;
+  font-size: $type-size-7;
+
+  .related-topics__label {
+    margin-inline-end: 0.25em;
+    color: $muted-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .topic-pill {
+    display: inline-block;
+    padding: 0.2em 0.7em;
+    color: $muted-text-color;
+    text-decoration: none;
+    background-color: mix($text-color, $background-color, 8%);
+    border: 1px solid $border-color;
+    border-radius: 2em;
+    line-height: 1.6;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $background-color;
+      background-color: $link-color;
+      border-color: $link-color;
+    }
+  }
+}
+
+// Two-column taxonomy archive: posts (left) + sticky topic rail (right).
+// Reclaim the right gutter the theme's .archive reserves for a .sidebar__right
+// (we lay out our own grid instead).
+.layout--categories,
+.layout--tags {
+  .archive {
+    @include breakpoint($large) {
+      padding-inline-end: 0;
+    }
+  }
+}
+
+.taxonomy-grid {
+  @include breakpoint($large) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) $right-sidebar-width-narrow;
+    column-gap: 2.5em;
+    align-items: start;
+  }
+
+  @include breakpoint($x-large) {
+    grid-template-columns: minmax(0, 1fr) $right-sidebar-width;
+  }
+
+  &__main {
+    min-width: 0;
+
+    @include breakpoint($large) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  &__rail {
+    @include breakpoint($large) {
+      grid-column: 2;
+      grid-row: 1;
+      position: sticky;
+      top: 2em;
+    }
+  }
+}
+
+// Sticky right-hand topic navigator on taxonomy archives
+.taxonomy__nav {
+  margin-bottom: 1.5em;
+
+  &-title {
+    margin: 0 0 0.5em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid $border-color;
+    font-size: $type-size-6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $muted-text-color;
+  }
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: $type-size-6;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5em;
+      padding: 0.3em 0.4em;
+      border-radius: $border-radius;
+      color: $text-color;
+      text-decoration: none;
+      transition: background-color 0.15s ease, color 0.15s ease;
+
+      &:hover {
+        background-color: mix($text-color, $background-color, 8%);
+        color: $link-color;
+      }
+    }
+  }
+
+  &-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .taxonomy__count {
+    flex: 0 0 auto;
+    min-width: 1.6em;
+    padding: 0 0.4em;
+    font-size: $type-size-7;
+    line-height: 1.6;
+    text-align: center;
+    color: $muted-text-color;
+    background-color: mix($text-color, $background-color, 10%);
+    border-radius: 1em;
+  }
+}
+
+// Compact thumbnail list for taxonomy archives (/categories/, /tags/)
+.entries-media {
+  .media__item {
+    margin-bottom: 1.25em;
+    padding-bottom: 1.25em;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.media-object {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+
+  &__thumb {
+    flex: 0 0 auto;
+    display: block;
+    width: 110px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 110px;
+      height: 74px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .archive__item-title {
+      margin-top: 0;
+      margin-bottom: 0.15em;
+      font-size: $type-size-5;
+    }
+
+    .page__meta {
+      margin: 0 0 0.35em;
+    }
+
+    .archive__item-excerpt {
+      margin: 0;
+      font-size: $type-size-6;
+      color: $muted-text-color;
+    }
+  }
+
+  @include breakpoint($small) {
+    &__thumb,
+    &__thumb img {
+      width: 150px;
+    }
+
+    &__thumb img {
+      height: 100px;
+    }
+  }
+}
+
+// Live tag/category filter bar on the Articles archive (Phase 4)
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0 0 1.5em;
+
+  &__button {
+    padding: 0.25em 0.9em;
+    font-size: $type-size-6;
+    color: $muted-text-color;
+    background-color: transparent;
+    border: 1px solid $border-color;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: $text-color;
+      border-color: $link-color;
+    }
+
+    &.is-active {
+      color: $background-color;
+      background-color: $link-color;
+      border-color: $link-color;
+    }
+  }
+}
+
+.entries-grid .is-hidden {
+  display: none;
+}

@@ -4,13 +4,11 @@ header:
   image: /assets/img/consumerization_article_006.jpeg
   teaser: /assets/img/consumerization_article_006.jpeg
 categories:
-  - Machine Learning
-  - Data Science
+  - Reactive Spring
+  - Java
 tags:
-  - linear regression
-  - machine learning
-  - mathematics
-  - statistics
+  - java
+  - Java EE
 ---
 জাভা স্ট্রিমস এবং রিএক্টিভ স্ট্রিমস এর মধ্যে অনেকটা মিল রয়েছে আবার কিছু পার্থক্য রয়েছে আসুন আমরা এখন জাভা স্ট্রিমস এবং রিএকটিভ স্ট্রিমস এর মধ্যে পার্থক্য দেখব।
 

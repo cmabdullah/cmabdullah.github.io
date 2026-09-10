@@ -5,6 +5,7 @@ header:
   teaser: /assets/img/reactive.jpeg
 categories:
   - Reactive Spring
+  - Java
 tags:
   - project-reactor
   - flux

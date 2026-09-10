@@ -6,15 +6,14 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
-  - Data Science
 tags:
   - probability
 ---
 > “Given a model, what’s the chance of this data?” vs. “Given this data, what’s the best model?”
 
-Whether you're diving into machine learning, statistics, or even just curious about coin tosses, understanding the difference between probability and likelihood is foundational — yet often misunderstood.
+Whether you're diving into machine learning, statistics, or even just curious about coin tosses, understanding the difference between probability and likelihood is foundational, yet often misunderstood.
 
-In this blog, we’ll explore both concepts through simple, visual, and intuitive examples — with a little help from our old friend: the coin.
+In this blog, we’ll explore both concepts through simple, visual, and intuitive examples, with a little help from our old friend: the coin.
 
 ---
 
@@ -22,13 +21,13 @@ In this blog, we’ll explore both concepts through simple, visual, and intuitiv
 
 ### What Is Probability?
 
-**Probability** is about predicting how likely a certain event is **before** it happens — assuming we already know the rules of the system.
+**Probability** is about predicting how likely a certain event is **before** it happens, assuming we already know the rules of the system.
 
 ### Think Forward:
 
 > “If I know the coin is fair, what’s the chance of getting 3 heads in a row?”
 
-This is a **forward problem**. You already know the model — now you’re trying to calculate the probability of an outcome.
+This is a **forward problem**. You already know the model, now you’re trying to calculate the probability of an outcome.
 
 ---
 
@@ -47,7 +46,7 @@ Since each flip is independent:
 
 P(HHH | p = 0.5) = 0.5 × 0.5 × 0.5 = 0.125
 
-That’s a 12.5% chance — only 1 of 8 possible outcomes (since 2^3 = 8).
+That’s a 12.5% chance, only 1 of 8 possible outcomes (since 2^3 = 8).
 
 ---
 
@@ -57,13 +56,13 @@ That’s a 12.5% chance — only 1 of 8 possible outcomes (since 2^3 = 8).
 
 **Likelihood** flips the question.
 
-> “I’ve seen 3 heads in a row — what’s the most likely value of **p** ?”
+> “I’ve seen 3 heads in a row, what’s the most likely value of **p** ?”
 
 Now, instead of assuming the model and asking about outcomes, you assume the **data** and ask:
 
 > What model (what value of **p** ) makes this data most plausible?
 
-This is the **reverse direction** — and it’s the foundation of **Maximum Likelihood Estimation (MLE)**.
+This is the **reverse direction**, and it’s the foundation of **Maximum Likelihood Estimation (MLE)**.
 
 ---
 
@@ -71,7 +70,7 @@ This is the **reverse direction** — and it’s the foundation of **Maximum Lik
 
 Let’s say you toss a coin 3 times, and observe: Result = H, H, H
 
-You don’t know if the coin is fair. You want to estimate **p** — the probability of Heads — that makes this sequence most likely.
+You don’t know if the coin is fair. You want to estimate **p**, the probability of Heads, that makes this sequence most likely.
 
 ### Likelihood Function:
 L(p) = p × p × p = p^3
@@ -88,7 +87,7 @@ So:
 
 - **MLE estimate**: p̂ = 1
 
-In other words, based on HHH, you'd conclude the coin is fully biased toward Heads — even though that conclusion is **shaky with such little data**.
+In other words, based on HHH, you'd conclude the coin is fully biased toward Heads, even though that conclusion is **shaky with such little data**.
 
 *Note: Likelihood doesn't judge; it just finds the best fit for the data you’ve got.*
 
@@ -154,6 +153,6 @@ So every time your model “learns,” it’s usually **maximizing a likelihood 
 > **Probability predicts. Likelihood explains.**
 
 They may look like twins, but they walk in **opposite directions**.  
-Mastering both helps you think clearly about data, models, and uncertainty — whether you're flipping coins or training neural networks.
+Mastering both helps you think clearly about data, models, and uncertainty, whether you're flipping coins or training neural networks.
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: Framework-Agnostic Nodes in LangGraph4j — The Adapter Pattern, Explained
+title: "Framework-Agnostic Nodes in LangGraph4j: The Adapter Pattern, Explained"
 header:
   overlay_image: /assets/images/unsplash-gallery-image-4.jpg
   overlay_filter: 0.5
@@ -12,8 +12,9 @@ sidebar:
   nav: "langgraph4j-series"
 categories:
   - AI
+  - Java
 tags:
-  - AI
+  - LangGraph4j
 ---
 
 [Part one]({% post_url 2026-07-19-State Management %}) built a two-node LangGraph4j graph and used it to explain state,
@@ -84,7 +85,7 @@ graph.addNode("responder", responderAction());
 |--------------------|-------------------------------------------|-----------------------------------------|
 | Type safety        | typo'd key compiles, fails at runtime     | compiler enforces every field and type  |
 | Framework coupling | node imports `org.bsc.langgraph4j`        | zero langgraph4j imports in nodes       |
-| Unit testing       | must construct `AgentState` map wrapper   | `execute(record)` — no framework object |
+| Unit testing       | must construct `AgentState` map wrapper   | `execute(record)`, no framework object |
 | Boilerplate        | none, idiomatic, fewer files              | adapter + domain record files           |
 | Ecosystem fit      | matches all official langgraph4j examples | custom pattern, not conventional        |
 
@@ -166,7 +167,7 @@ Use `implements NodeAction` directly when:
 - **The graph is small and stable:** two to four nodes, unlikely to grow; testing nodes through the graph is acceptable.
 - **Ecosystem alignment matters:** working alongside teams using langgraph4j conventions, or following the official examples closely.
 
-Every official langgraph4j project — [`AgentExecutor`](https://github.com/langgraph4j/langgraph4j/blob/main/langchain4j/langchain4j-agent/src/main/java/org/bsc/langgraph4j/agentexecutor/AgentExecutor.java), [`CallModel`](https://github.com/langgraph4j/langgraph4j/blob/main/langchain4j/langchain4j-agent/src/main/java/org/bsc/langgraph4j/agentexecutor/CallModel.java), [`langgraph4j-deepagents`](https://github.com/langgraph4j/langgraph4j-deepagents/blob/main/src/main/java/org/bsc/langgraph4j/deepagents/GraphBuilder.java)
+Every official langgraph4j project, [`AgentExecutor`](https://github.com/langgraph4j/langgraph4j/blob/main/langchain4j/langchain4j-agent/src/main/java/org/bsc/langgraph4j/agentexecutor/AgentExecutor.java), [`CallModel`](https://github.com/langgraph4j/langgraph4j/blob/main/langchain4j/langchain4j-agent/src/main/java/org/bsc/langgraph4j/agentexecutor/CallModel.java), [`langgraph4j-deepagents`](https://github.com/langgraph4j/langgraph4j-deepagents/blob/main/src/main/java/org/bsc/langgraph4j/deepagents/GraphBuilder.java)
 falls into this category. None of them persist state outside LangGraph4j's own checkpointing or need isolated node-level tests.
 
 ---
@@ -199,6 +200,6 @@ or a state object that lives outside the graph. The decision rule is simple: **d
 - Reference code: [Langgraph4jConsol](https://github.com/cmabdullah/Langgraph4jConsol)
 - Part one: [State Management in LangGraph4j]({% post_url 2026-07-19-State Management %})
 - Part two: [Node Hooks in LangGraph4j]({% post_url 2026-07-20-Node Hooks in LangGraph4j %})
-- [Hexagonal Architecture — Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
-- [Anti-Corruption Layer — Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)
-- [Data Mapper — Martin Fowler](https://martinfowler.com/eaaCatalog/dataMapper.html)
+- [Hexagonal Architecture, Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
+- [Anti-Corruption Layer, Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)
+- [Data Mapper, Martin Fowler](https://martinfowler.com/eaaCatalog/dataMapper.html)

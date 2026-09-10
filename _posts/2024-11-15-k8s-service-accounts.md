@@ -1,5 +1,5 @@
 ---
-title: "Service Accounts — Kubernetes Internals #10"
+title: "Service Accounts (Kubernetes Internals #12)"
 header:
   overlay_image: /assets/images/blog_article_08_coffee_journal_2047x7740.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - service-account
@@ -77,11 +77,11 @@ container reads them from `/var/run/secrets/kubernetes.io/serviceaccount/`.
 
 This is the part that trips people up during upgrades and interviews:
 
-- **Before v1.22** — creating a service account generated a **non-expiring** token stored in a Secret and
+- **Before v1.22**, creating a service account generated a **non-expiring** token stored in a Secret and
   auto-mounted into every Pod. Long-lived and hard to revoke.
-- **v1.22 (KEP-1205)** — the **TokenRequest API**. Tokens became **audience-, time-, and object-bound** and
+- **v1.22 (KEP-1205)**, the **TokenRequest API**. Tokens became **audience-, time-, and object-bound** and
   are delivered via the projected volume above, with an expiry and automatic rotation.
-- **v1.24 (KEP-2799)** — creating a service account **no longer auto-creates a token Secret**. You mint one on
+- **v1.24 (KEP-2799)**, creating a service account **no longer auto-creates a token Secret**. You mint one on
   demand.
 
 ```bash
@@ -109,8 +109,8 @@ this series. Grant the minimum, and disable auto-mount where a Pod does not need
 
 > kubectl describe serviceaccount dash-sa
 
-[Service Accounts — Kubernetes docs](https://kubernetes.io/docs/concepts/security/service-accounts/)
+[Service Accounts, Kubernetes docs](https://kubernetes.io/docs/concepts/security/service-accounts/)
 
 ---
-*Kubernetes Internals series — Part 10 of 16.*
-*← Previous: [Secrets](/devops/k8s-secrets/) · Next: [Taints and Tolerations](/devops/k8s-taints-and-tolerations/) →*
+*Kubernetes Internals series, Part 12 of 18.*
+*← Previous: [Persistent Volumes](/devops/persistent-volumes-dynamically-provisioning/) · Next: [Taints and Tolerations](/devops/k8s-taints-and-tolerations/) →*

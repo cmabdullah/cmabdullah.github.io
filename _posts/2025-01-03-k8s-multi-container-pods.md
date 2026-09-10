@@ -1,5 +1,5 @@
 ---
-title: "Multi-Container Pods: Sidecar, Adapter, Ambassador — Kubernetes Internals #17"
+title: "Multi-Container Pods: Sidecar, Adapter, Ambassador (Kubernetes Internals #19)"
 header:
   overlay_image: /assets/images/blog_generated_11_circuit_board_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - pods
@@ -39,7 +39,7 @@ the central server expects. Your app writes logs however it likes; the adapter n
 ### Ambassador
 
 A proxy for *outbound* connections. Your app always talks to a database at `localhost`, and the **ambassador
-container proxies that request to the right database** — local for dev, another for test, production for prod.
+container proxies that request to the right database**, local for dev, another for test, production for prod.
 The environment logic lives in the ambassador, not your application code.
 
 ### The definition
@@ -67,8 +67,8 @@ Pod is restarted. Keep only tightly-coupled helpers in the same Pod; anything in
 
 > kubectl logs simple-app -c log-agent
 
-[Sidecar Containers — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)
+[Sidecar Containers, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)
 
 ---
-*Kubernetes Internals series — Part 17.*
+*Kubernetes Internals series, Part 19.*
 *Overview: [kubectl Field Guide](/devops/kubectl-command-field-guide/) · Next: [Init Containers](/devops/k8s-init-containers/) →*

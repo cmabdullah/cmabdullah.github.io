@@ -6,6 +6,7 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Design Pattern
+  - Java
 tags:
   - design pattern
 ---
@@ -66,7 +67,7 @@ public class AppConfig {
 }
 ```
 
-This works perfectly — in a single-threaded world. The moment two threads call `getInstance()` at the same time, 
+This works perfectly, in a single-threaded world. The moment two threads call `getInstance()` at the same time, 
 both can see `instance == null`, both create an object, and now you have two "singletons." 
 One of them wins the field assignment; the other lives on wherever the losing thread stashed its reference. 
 These bugs are nasty precisely because they only show up under concurrent load, usually in production.
@@ -84,7 +85,7 @@ public static synchronized AppConfig getInstance() {
 }
 ```
 
-Correct, but blunt. The race only exists during the *first* call — yet every call for the lifetime of the application now pays for lock acquisition. 
+Correct, but blunt. The race only exists during the *first* call, yet every call for the lifetime of the application now pays for lock acquisition. 
 On a hot path called millions of times, you are locking to protect an initialization that finished ages ago.
 
 ## Double-checked locking
@@ -119,7 +120,7 @@ Two details here matter more than the pattern itself:
  publish the reference, *then* run the constructor. Another thread could observe a non-null but half-constructed object and happily start using it. 
  `volatile` forbids that reordering and guarantees visibility across threads. Pre-Java-5 memory model, double-checked locking was famously broken for exactly this reason.
 
-Once initialized, all subsequent calls skip the lock entirely — you get lazy initialization at essentially eager-initialization speed.
+Once initialized, all subsequent calls skip the lock entirely, you get lazy initialization at essentially eager-initialization speed.
 
 ## The initialization-on-demand holder (my default)
 
@@ -175,11 +176,11 @@ Singleton has a reputation problem, and it is partly deserved. A few things to k
 
 - **It is global state in disguise.** Every `getInstance()` call is a hidden dependency that does not appear in any constructor or method signature, 
  which makes code harder to reason about and to test. If your class needs an `AppConfig`, it is usually better to *inject* 
- it and let a DI container (Spring, Guice) manage the "only one exists" part — Spring beans are singletons by default, scoped to the container rather than the class loader.
+ it and let a DI container (Spring, Guice) manage the "only one exists" part, Spring beans are singletons by default, scoped to the container rather than the class loader.
 - **Testing pain is real.** You cannot easily swap a hard-coded singleton for a mock. If you must use one, at least have it implement an interface.
 - **"Only one" is a scope, not an absolute.** One per JVM? Per class loader? Per container? In application servers and OSGi environments, "the" singleton can quietly become several.
 
-Used deliberately — for stateless or effectively-immutable services that truly must be unique — Singleton is a clean, honest pattern. Used as a convenient global variable, it becomes the thing your future self grumbles about while writing test doubles.
+Used deliberately, for stateless or effectively-immutable services that truly must be unique, Singleton is a clean, honest pattern. Used as a convenient global variable, it becomes the thing your future self grumbles about while writing test doubles.
 
 ## Summary
 
@@ -198,8 +199,8 @@ Start with the holder idiom, reach for the enum when serialization or reflection
 
 **References**
 
-- [Singleton — Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
-- [Singletons in Java — Baeldung](https://www.baeldung.com/java-singleton)
-- [The "Double-Checked Locking is Broken" Declaration — Bill Pugh et al.](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
-- [Initialization-on-demand holder idiom — Wikipedia](https://en.wikipedia.org/wiki/Initialization-on-demand_holder_idiom)
-- *Effective Java* (3rd Edition), Item 3 — Joshua Bloch
+- [Singleton, Refactoring Guru](https://refactoring.guru/design-patterns/singleton)
+- [Singletons in Java, Baeldung](https://www.baeldung.com/java-singleton)
+- [The "Double-Checked Locking is Broken" Declaration, Bill Pugh et al.](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
+- [Initialization-on-demand holder idiom, Wikipedia](https://en.wikipedia.org/wiki/Initialization-on-demand_holder_idiom)
+- *Effective Java* (3rd Edition), Item 3, Joshua Bloch

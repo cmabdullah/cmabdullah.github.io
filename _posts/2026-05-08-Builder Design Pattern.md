@@ -6,11 +6,12 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Design Pattern
+  - Java
 tags:
   - design pattern
 ---
 > Builder is a creational pattern for constructing objects with many optional parameters. Instead of one huge constructor, 
-> you set each parameter through a named method on a builder object, then call `build()` — which validates the combination and returns an immutable result.
+> you set each parameter through a named method on a builder object, then call `build()`, which validates the combination and returns an immutable result.
 
 **The Builder pattern separates the construction of a complex object from the object itself: a dedicated Builder collects the parameters step by step through named, chainable methods, and a final `build()` call validates everything and returns the complete, immutable object.**
 
@@ -22,7 +23,7 @@ and virtually every request object in the AWS SDK are all builders.
 
 ## Attempt 1: the telescoping constructor
 
-Say we are writing the configuration object for a database connection pool. Three things are genuinely mandatory — host, port, and database name. 
+Say we are writing the configuration object for a database connection pool. Three things are genuinely mandatory, host, port, and database name. 
 Everything else has a reasonable default that callers *might* want to override:
 
 ```java
@@ -48,7 +49,7 @@ DatabaseConfig config = new DatabaseConfig(
         "app_user", "s3cr3t", 20, 5, true, false, true);
 ```
 
-Quick — is `20` the pool size or the timeout? Is the first `true` SSL or read-only? Neither can the person reviewing your pull request. 
+Quick, is `20` the pool size or the timeout? Is the first `true` SSL or read-only? Neither can the person reviewing your pull request. 
 Long runs of same-typed parameters are a bug factory: **swap the two ints or two of the booleans and the compiler will not save you** 
 you will find out in production, when the pool opens 5 connections with a 20-second timeout instead of the other way around.
 
@@ -68,10 +69,10 @@ config.setMaxPoolSize(20);
 config.setUseSsl(true);
 ```
 
-More readable — but we traded one problem for two worse ones:
+More readable, but we traded one problem for two worse ones:
 
 - **The object is mutable forever.** Anyone holding a reference can call `setMaxPoolSize(500)` at runtime, long after the pool was sized. 
-  All fields must drop `final`, and immutability one of the cheapest correctness guarantees in Java — is gone. 
+  All fields must drop `final`, and immutability one of the cheapest correctness guarantees in Java, is gone. 
   For an object like this, which typically outlives the whole application and is read from many threads, that is a real liability, not a style complaint.
 - **The object goes through inconsistent states.** Between the constructor and the last setter, the config is half-built. 
   If it escapes to another thread (or even just to another method) mid-assembly say, the pool starts initializing after `setUsername` but before `setPassword`
@@ -190,11 +191,11 @@ DatabaseConfig config = new DatabaseConfig.Builder("db.internal.acme.com", 5432,
 
 The moving parts, and why each one is there:
 
-- **`DatabaseConfig`'s constructor is private** and takes the builder itself — the only way to make a config is through `build()`.
+- **`DatabaseConfig`'s constructor is private** and takes the builder itself, the only way to make a config is through `build()`.
 - **Required parameters go in the Builder's constructor**, so you cannot even start building without them; optional ones are named, chainable methods with sensible defaults.
 - **Each setter returns `this`**, which is what enables the fluent chain (a *fluent interface*, in Martin Fowler's term).
-- **Setters can group related values.** `credentials(username, password)` takes both together — something a bag of independent setters can't express.
-- **`build()` is the single choke point.** Cross-field rules — like refusing to pair a password with a plaintext connection — live in one place, and no config object exists until they pass.
+- **Setters can group related values.** `credentials(username, password)` takes both together, something a bag of independent setters can't express.
+- **`build()` is the single choke point.** Cross-field rules, like refusing to pair a password with a plaintext connection, live in one place, and no config object exists until they pass.
 - **Every field stays `final`.** The object is born complete, can never be seen half-initialized, and is safely shareable across threads without synchronization.
 
 ## "Can't the class just build itself?"
@@ -225,7 +226,7 @@ a `Director` that drives an abstract `Builder` interface, with concrete builders
 from the same construction steps. The canonical example is a document converter: one director walks the document, 
 and an `HtmlBuilder`, `PdfBuilder`, or `TextBuilder` each assemble a different output.
 
-That form still appears in parsers and document generators, but in day-to-day Java the Bloch-style static nested builder is what you will write and encounter — the GoF's "separate the construction of a complex object from its representation" collapsed into "make big constructors readable and keep the result immutable."
+That form still appears in parsers and document generators, but in day-to-day Java the Bloch-style static nested builder is what you will write and encounter, the GoF's "separate the construction of a complex object from its representation" collapsed into "make big constructors readable and keep the result immutable."
 
 ## Less boilerplate: Lombok and records
 
@@ -236,7 +237,7 @@ The honest downside of Builder is the typing: the builder duplicates every field
 - **Java records** (Java 16+) eliminate the boilerplate of the *product* class and give you immutability by default. 
  For small records, named construction is arguably unnecessary; for big ones, a record plus a Lombok `@Builder` or a hand-written compact builder combine nicely.
 
-## When to reach for it — and when not to
+## When to reach for it, and when not to
 
 Use Builder when a class has **four or more constructor parameters**, especially when several are optional or share a 
 type (adjacent ints and booleans are where call-site bugs breed). It is also the natural fit when you want an immutable object 
@@ -260,8 +261,8 @@ When a constructor starts telescoping, that trade is worth taking.
 
 **References**
 
-- [Builder — Refactoring Guru](https://refactoring.guru/design-patterns/builder)
-- *Effective Java* (3rd Edition), Item 2: "Consider a builder when faced with many constructor parameters" — Joshua Bloch
-- *Design Patterns: Elements of Reusable Object-Oriented Software* — Gamma, Helm, Johnson, Vlissides (the original GoF Builder)
-- [Fluent Interface — Martin Fowler](https://martinfowler.com/bliki/FluentInterface.html)
-- [Using Lombok's @Builder Annotation — Baeldung](https://www.baeldung.com/lombok-builder)
+- [Builder, Refactoring Guru](https://refactoring.guru/design-patterns/builder)
+- *Effective Java* (3rd Edition), Item 2: "Consider a builder when faced with many constructor parameters", Joshua Bloch
+- *Design Patterns: Elements of Reusable Object-Oriented Software*, Gamma, Helm, Johnson, Vlissides (the original GoF Builder)
+- [Fluent Interface, Martin Fowler](https://martinfowler.com/bliki/FluentInterface.html)
+- [Using Lombok's @Builder Annotation, Baeldung](https://www.baeldung.com/lombok-builder)

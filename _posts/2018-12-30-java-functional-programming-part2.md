@@ -4,13 +4,9 @@ header:
   image: /assets/img/function-2.jpeg
   teaser: /assets/img/function-2.jpeg
 categories:
-  - Machine Learning
-  - Data Science
+  - Java
 tags:
-  - linear regression
-  - machine learning
-  - mathematics
-  - statistics
+  - Java Stream API
 ---
 আমরা বিভিন্ন ধরনের নাম্বার, স্ট্রিং অথবা অবজেক্টের কালেকশন ব্যবহার করি। সাধারনত আমরা ইম্পারেটিভ পদ্ধতিতে প্রোগ্রাম লিখে থাকি যেখানে অনেক বেশি কোড লিখতে হয় কালেকশনের নাম্বার গুলো ব্যবহার করার জন্য এবং এ পদ্ধতিতে ভুল হওয়ার প্রবণতা বেশি থাকে। আমরা দেখব ফাংশনাল প্রোগ্রামিং এর মাধ্যমে কিভাবে সংক্ষিপ্ত, স্পষ্ট ও সুন্দর প্রোগ্রাম লিখতে পারি।
 

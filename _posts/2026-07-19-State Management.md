@@ -12,8 +12,9 @@ sidebar:
   nav: "langgraph4j-series"
 categories:
   - AI
+  - Java
 tags:
-  - AI
+  - LangGraph4j
 ---
 
 If you've built anything with LangGraph4j beyond a hello-world chain, you've hit the real question behind every graph:  
@@ -339,7 +340,7 @@ state it doesn't know about. The error branch not touching `sourceText` isn't di
 that map after each node gives you durable, resumable, per-thread conversations the foundation of human-in-the-loop without any node knowing checkpoints exist.
 
 The whole example is around 250 lines of Java, most of it shown above. Swap the rule-based nodes for LLM calls and the state 
-machinery doesn't change — which is rather the point: in LangGraph4j, state management isn't the plumbing around your agent.
+machinery doesn't change, which is rather the point: in LangGraph4j, state management isn't the plumbing around your agent.
 It *is* the agent's architecture.
 
 - Reference code: [Langgraph4jConsol](https://github.com/cmabdullah/Langgraph4jConsol)

@@ -1,5 +1,5 @@
 ---
-title: "Deployment Strategies: Rolling, Blue-Green, Canary — Kubernetes Internals #20"
+title: "Deployment Strategies: Rolling, Blue-Green, Canary (Kubernetes Internals #22)"
 header:
   overlay_image: /assets/images/blog_article_05_server_wiring_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - deployment
@@ -75,8 +75,8 @@ of Pod count.
 
 > kubectl get pods -l app=front-end -L version
 
-[Deployments — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+[Deployments, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 ---
-*Kubernetes Internals series — Part 20.*
+*Kubernetes Internals series, Part 22.*
 *← Previous: [Health Probes](/devops/k8s-health-probes/) · Next: [Jobs & CronJobs](/devops/k8s-jobs-and-cronjobs/) →*

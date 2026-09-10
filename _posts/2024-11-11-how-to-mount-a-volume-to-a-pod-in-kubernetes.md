@@ -1,17 +1,18 @@
 ---
-title: How to mount a volume to a pod in Kubernetes
+title: "Volumes: Mounting Storage to a Pod (Kubernetes Internals #10)"
 header:
   image: /assets/images/unsplash-image-9.jpg
   teaser: /assets/images/unsplash-image-9.jpg # 👈 thumbnail for list pages
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
   - DevOps
-  - Kubernetes
 tags:
   - persistent-volumes
   - kubernetes
   - pods
   - storage
+sidebar:
+  nav: "kubernetes-series"
 ---
 
 Kubernetes containers and pods are ephemeral and can be restarted, rescheduled, or deleted.
@@ -88,3 +89,6 @@ You can check if the volume directory has been properly mounted within the pod.
 
 [persistent-volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 
+---
+*Kubernetes Internals series, Part 10 of 18.*
+*← Previous: [Secrets](/devops/k8s-secrets/) · Next: [Persistent Volumes](/devops/persistent-volumes-dynamically-provisioning/) →*

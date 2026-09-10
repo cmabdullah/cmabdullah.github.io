@@ -4,8 +4,7 @@ header:
   image: /assets/img/bytecode.jpg
   teaser: /assets/img/bytecode.jpg
 categories:
-  - Machine Learning
-  - Data Science
+  - Java
 tags:
   - linear regression
   - machine learning

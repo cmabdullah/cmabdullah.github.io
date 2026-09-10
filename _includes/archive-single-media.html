@@ -1,0 +1,28 @@
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="media__item">
+  <article class="archive__item media-object" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
+    {% if teaser %}
+      <a class="media-object__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ teaser | relative_url }}" alt="" loading="lazy">
+      </a>
+    {% endif %}
+    <div class="media-object__body">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+      </h2>
+      {% include page__meta.html %}
+      {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    </div>
+  </article>
+</div>

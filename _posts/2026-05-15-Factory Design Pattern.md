@@ -6,6 +6,7 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Design Pattern
+  - Java
 tags:
   - design pattern
 ---
@@ -13,17 +14,17 @@ tags:
 > Instead of an if-else ladder picking the class, the superclass declares an abstract creation method and each subclass answers with exactly one product.
 
 **The Factory Method pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate.
-The creation logic moves out of the class that *uses* the object and into a parallel hierarchy of creators — each one responsible for exactly one product.**
+The creation logic moves out of the class that *uses* the object and into a parallel hierarchy of creators, each one responsible for exactly one product.**
 
 If Builder is about *how* a complicated object gets created, Factory Method is about *who decides which* object gets created.
 It attacks a very specific smell: a class that both uses an object and contains a conditional (`if`/`else` or `switch`) choosing its concrete type.
 
-You have met it in the JDK without noticing: `Collection.iterator()` is the textbook example — `ArrayList` answers with its iterator, 
+You have met it in the JDK without noticing: `Collection.iterator()` is the textbook example, `ArrayList` answers with its iterator, 
 `HashSet` with a completely different one, and the code calling `iterator()` never knows or cares which.
 
 ## The starting point: one class does everything
 
-Say we are starting a logistics business. We plan two services — road and sea — so we need transport, and the naive first cut stuffs everything into two classes:
+Say we are starting a logistics business. We plan two services, road and sea, so we need transport, and the naive first cut stuffs everything into two classes:
 
 ```java
 class Transport {
@@ -72,12 +73,12 @@ and one inside `Logistic.planDelivery()` deciding *identity* by string compariso
 Now the business grows and we add air freight. To ship one `Plane`, we must reopen and edit **both** classes, add a branch to `delivery()`,
 add a branch to `planDelivery()`, and hope every string matches. Every new transport type means modifying working, tested code. In SOLID terms:
 
-- **Open/Closed Principle is violated** — the classes are not closed for modification; extension *requires* modification.
-- **Single Responsibility Principle is violated** — `Logistic` plans deliveries *and* knows how to construct every transport ever invented; 
+- **Open/Closed Principle is violated**, the classes are not closed for modification; extension *requires* modification.
+- **Single Responsibility Principle is violated**, `Logistic` plans deliveries *and* knows how to construct every transport ever invented; 
  `Transport` carries the behavior of every vehicle in one method.
 
 A string-keyed if-else ladder is also a bug factory in its own right: pass `"Road"` instead of `"ROAD"` and you silently 
-get a transport named `"NA"` — the compiler cannot help you.
+get a transport named `"NA"`, the compiler cannot help you.
 
 ## Step 1: polymorphism fixes the behavior
 
@@ -209,28 +210,28 @@ The moving parts, and why each one is there:
 Strip away trucks and ships and the pattern has a shape worth memorizing, because you will recognize it in the wild more often than you will build it from scratch:
 
 1. `ClassA` HAS-A `ClassB`, and `ClassB` has multiple subclasses (`ClassB1`, `ClassB2`, … `ClassBn`).
-2. If `ClassA` picks which `ClassB` subclass to instantiate, it is forced into a conditional — one that grows with every new subclass.
+2. If `ClassA` picks which `ClassB` subclass to instantiate, it is forced into a conditional, one that grows with every new subclass.
 3. Instead, give `ClassA` its own subclasses, **parallel** to the `ClassB` hierarchy: `ClassA1` creates `ClassB1`, `ClassA2` creates `ClassB2`.
 4. The abstract `ClassA` declares the factory method; each `ClassAi` overrides it with a single `new`.
 
-Creator hierarchy and product hierarchy grow in lockstep, one pair of classes per variant, and no conditional anywhere. That parallel structure *is* the Factory Method pattern — everything else is naming.
+Creator hierarchy and product hierarchy grow in lockstep, one pair of classes per variant, and no conditional anywhere. That parallel structure *is* the Factory Method pattern, everything else is naming.
 
 ## Sorting out the "factory" family
 
 "Factory" is the most overloaded word in design-pattern vocabulary, and three different things routinely get conflated:
 
-- **Static factory method** — `LocalDate.of(2026, 5, 5)`, `List.of(...)`, `Optional.empty()`. Just a static method that returns an instance.
+- **Static factory method**, `LocalDate.of(2026, 5, 5)`, `List.of(...)`, `Optional.empty()`. Just a static method that returns an instance.
  Joshua Bloch's *Effective Java* Item 1 champions these over constructors, but they are an API idiom, **not** 
- the GoF pattern — there is no subclassing, no deferred decision.
-- **Simple factory** — a single class with one method full of `switch`/`if` returning different products. Widely used, 
+ the GoF pattern, there is no subclassing, no deferred decision.
+- **Simple factory**, a single class with one method full of `switch`/`if` returning different products. Widely used, 
  perfectly reasonable for small cases, but note that it *centralizes* the conditional rather than eliminating it. It is not in the GoF catalog at all.
-- **Factory Method (this post)** — the conditional is *dissolved* into a class hierarchy; subclasses decide via overriding.
+- **Factory Method (this post)**, the conditional is *dissolved* into a class hierarchy; subclasses decide via overriding.
 
 One step further sits **Abstract Factory**, the GoF pattern for creating whole *families* of related products (a `UiFactory` 
 producing matching buttons, checkboxes, and scrollbars per platform). It is typically implemented *using* factory methods
-one per product — which is another reason the names blur together. That one deserves its own post.
+one per product, which is another reason the names blur together. That one deserves its own post.
 
-## When to reach for it — and when not to
+## When to reach for it, and when not to
 
 Reach for Factory Method when a class cannot anticipate the concrete type it must create, when you expect the set of 
 product variants to grow, or when you are writing a framework and want users to plug in their own products
@@ -246,7 +247,7 @@ if (user.isLoggedIn()) {
 }
 ```
 
-Two outcomes, no reason to expect a third, no object creation involved — a conditional is the honest tool here, and 
+Two outcomes, no reason to expect a third, no object creation involved, a conditional is the honest tool here, and 
 replacing it with four classes would be ceremony. If-else is not the enemy; **an if-else that selects concrete types and grows with every business change** is. 
 The pattern's cost is real: every new variant costs a new creator class, and the class count doubles relative to the simple-factory approach. 
 That cost buys you closed-for-modification code, and the trade is only worth it when modification pressure actually exists.
@@ -260,14 +261,14 @@ That cost buys you closed-for-modification code, and the trade is only worth it 
 | Factory Method                             | **Adding** two classes, editing none | ✓   | ✓       | Highest     |
 
 Factory Method is the pattern you converge on naturally the second time an if-else ladder makes you reopen a class you thought was finished. 
-The first time, add the branch. The second time, notice the pattern — the third variant is already on its way.
+The first time, add the branch. The second time, notice the pattern, the third variant is already on its way.
 
 ---
 
 **References**
 
-- [Factory Method — Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)
-- *Design Patterns: Elements of Reusable Object-Oriented Software* — Gamma, Helm, Johnson, Vlissides (the original GoF Factory Method, pp. 107–116)
-- *Effective Java* (3rd Edition), Item 1: "Consider static factory methods instead of constructors" — Joshua Bloch
-- *Head First Design Patterns* (2nd Edition), Chapter 4: "The Factory Pattern" — Eric Freeman, Elisabeth Robson
-- [The Open-Closed Principle — Robert C. Martin (Uncle Bob)](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)
+- [Factory Method, Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)
+- *Design Patterns: Elements of Reusable Object-Oriented Software*, Gamma, Helm, Johnson, Vlissides (the original GoF Factory Method, pp. 107–116)
+- *Effective Java* (3rd Edition), Item 1: "Consider static factory methods instead of constructors", Joshua Bloch
+- *Head First Design Patterns* (2nd Edition), Chapter 4: "The Factory Pattern", Eric Freeman, Elisabeth Robson
+- [The Open-Closed Principle, Robert C. Martin (Uncle Bob)](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html)

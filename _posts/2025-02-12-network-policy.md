@@ -1,13 +1,14 @@
 ---
-layout: post
-title: What is NetworkPolicy in kubernetes?
+title: "NetworkPolicy: Controlling Pod Traffic (Kubernetes Internals #26)"
 header:
   image: /assets/images/unsplash-image-6.jpg
   teaser: /assets/images/unsplash-image-6.jpg
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
-categories: [devops]
+categories: [DevOps]
 tags: [network-policy, security, devops]
 image: '/assets/img/networkPolicyIngress.svg'
+sidebar:
+  nav: "kubernetes-series"
 ---
 In Kubernetes clusters, a firewall is used for controlling traffic at the IP level or port level. 
 NetworkPolicy acts as a firewall in the cluster. It will allow you to define some firewall rules, 
@@ -135,3 +136,7 @@ spec:
 ```
 Ref:
 1. [Network Policy](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+
+---
+*Kubernetes Internals series, Part 26.*
+*← Previous: [Ingress](/devops/ingress/) · Next: [StatefulSets & Headless Services](/devops/k8s-statefulsets/) →*

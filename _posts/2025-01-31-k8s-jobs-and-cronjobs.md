@@ -1,5 +1,5 @@
 ---
-title: "Jobs and CronJobs — Kubernetes Internals #21"
+title: "Jobs and CronJobs (Kubernetes Internals #23)"
 header:
   overlay_image: /assets/images/blog_article_10_creative_desk_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - jobs
@@ -84,8 +84,8 @@ kubectl delete job math-add-job
 
 > kubectl get cronjob reporting-cron-job
 
-[Jobs — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+[Jobs, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
 ---
-*Kubernetes Internals series — Part 21.*
+*Kubernetes Internals series, Part 23.*
 *← Previous: [Deployment Strategies](/devops/k8s-deployment-strategies/) · Next: [Services](/devops/k8s-services/) →*

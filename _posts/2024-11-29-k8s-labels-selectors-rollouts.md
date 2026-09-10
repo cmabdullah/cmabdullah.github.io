@@ -1,5 +1,5 @@
 ---
-title: "Labels, Selectors and Rollouts — Kubernetes Internals #12"
+title: "Labels, Selectors and Rollouts (Kubernetes Internals #14)"
 header:
   overlay_image: /assets/images/blog_article_09_laptop_coffee_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - labels
@@ -75,8 +75,8 @@ kubectl rollout undo deployment/myapp
 
 > kubectl get pods --show-labels
 
-[Labels and Selectors — Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+[Labels and Selectors, Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 
 ---
-*Kubernetes Internals series — Part 12 of 16.*
+*Kubernetes Internals series, Part 14 of 18.*
 *← Previous: [Taints and Tolerations](/devops/k8s-taints-and-tolerations/) · Next: [Jobs, Scaling and Ingress](/devops/k8s-jobs-scaling-ingress/) →*

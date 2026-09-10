@@ -22,6 +22,7 @@ en: &DEFAULT_EN
   meta_label                 :
   tags_label                 : "Tags:"
   categories_label           : "Categories:"
+  related_topics_label       : "Related topics:"
   date_label                 : "Updated:"
   comments_label             : "Leave a comment"
   comments_title             : "Comments"

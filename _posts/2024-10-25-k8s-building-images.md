@@ -1,5 +1,5 @@
 ---
-title: "Building Images: the Docker Side — Kubernetes Internals #7"
+title: "Building Images: the Docker Side (Kubernetes Internals #7)"
 header:
   overlay_image: /assets/images/unsplash-image-7.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - docker
@@ -71,5 +71,5 @@ docker run --cap-drop KILL ubuntu           # remove one
 [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 
 ---
-*Kubernetes Internals series — Part 7 of 16.*
+*Kubernetes Internals series, Part 7 of 18.*
 *← Previous: [Namespaces](/devops/k8s-namespaces/) · Next: [ConfigMaps](/devops/k8s-configmaps/) →*

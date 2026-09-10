@@ -1,5 +1,5 @@
 ---
-title: "Deployments — Kubernetes Internals #4"
+title: "Deployments (Kubernetes Internals #4)"
 header:
   overlay_image: /assets/images/unsplash-image-4.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - deployment
@@ -100,8 +100,8 @@ Deployment. Choose labels you will not need to rename.
 
 > kubectl rollout status deployment/my-app-deployment
 
-[Deployments — Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+[Deployments, Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 ---
-*Kubernetes Internals series — Part 4 of 16.*
+*Kubernetes Internals series, Part 4 of 18.*
 *← Previous: [ReplicaSets](/devops/k8s-replicasets/) · Next: [Viewing Resources and Output Formats](/devops/k8s-viewing-resources/) →*

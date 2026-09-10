@@ -1,5 +1,5 @@
 ---
-title: "Services: ClusterIP, NodePort, LoadBalancer — Kubernetes Internals #22"
+title: "Services: ClusterIP, NodePort, LoadBalancer (Kubernetes Internals #24)"
 header:
   overlay_image: /assets/images/blog_article_17_bridge_geometry_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - services
@@ -22,7 +22,7 @@ Pods are ephemeral, they die, reschedule, and come back with a new IP. Anything 
 A **Service** solves this: it gives a set of Pods one stable address and load-balances across them, no matter
 how often the Pods underneath change.
 
-### ClusterIP — internal (the default)
+### ClusterIP, internal (the default)
 
 A ClusterIP exposes the Service on an internal address reachable **only inside the cluster**. It is how one
 microservice talks to another.
@@ -40,7 +40,7 @@ spec:
       port: 80          # the Service's port
 ```
 
-### NodePort — reach it from outside
+### NodePort, reach it from outside
 
 A NodePort builds on ClusterIP and also opens a **port on every node** (in the range **30000–32767**), so an
 external client can hit any node IP on that port.
@@ -59,7 +59,7 @@ spec:
 The three ports are worth pinning down: **`targetPort`** is where the container listens, **`port`** is the
 Service's own port, and **`nodePort`** is what the outside world connects to.
 
-### LoadBalancer — cloud front door
+### LoadBalancer, cloud front door
 
 On a cloud provider, `type: LoadBalancer` provisions an external load balancer that routes to the Service.
 It is the production way to expose a single service to the internet.
@@ -73,8 +73,8 @@ It is the production way to expose a single service to the internet.
 
 > kubectl get svc -o wide
 
-[Services — Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/)
+[Services, Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/)
 
 ---
-*Kubernetes Internals series — Part 22.*
-*← Previous: [Jobs & CronJobs](/devops/k8s-jobs-and-cronjobs/) · Next: [StatefulSets & Headless Services](/devops/k8s-statefulsets/) →*
+*Kubernetes Internals series, Part 24.*
+*← Previous: [Jobs & CronJobs](/devops/k8s-jobs-and-cronjobs/) · Next: [Ingress](/devops/ingress/) →*

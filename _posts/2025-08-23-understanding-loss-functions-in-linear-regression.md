@@ -6,7 +6,6 @@ header:
   caption: "Photo credit: [Unsplash](https://unsplash.com/)"
 categories:
   - Machine Learning
-  - Data Science
 tags:
   - linear regression
   - machine learning

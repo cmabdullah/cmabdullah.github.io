@@ -1,5 +1,5 @@
 ---
-title: kubectl Field Guide — A Working Reference for Day-to-Day Kubernetes
+title: "kubectl Field Guide: A Working Reference for Day-to-Day Kubernetes"
 header:
   overlay_image: /assets/images/blog_generated_07_mountain_lake_2047x774.jpg
   overlay_filter: 0.5
@@ -9,11 +9,10 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - kubectl
-  - devops
 sidebar:
   nav: "kubernetes-series"
 ---
@@ -24,11 +23,11 @@ you are actually trying to do, with the flags and gotchas that matter on the job
 
 > **Rule of thumb:** **imperative** commands (`run`, `create`, `scale`, `edit`) change the cluster directly and are great for quick fixes and scaffolding; **declarative** commands (`apply -f`) reconcile the cluster to a YAML file you keep in version control. Most day-to-day work is a mix scaffold imperatively, save the manifest, then manage it declaratively.
 
-This field guide is the overview for a multi-part **Kubernetes Internals** deep-dive series (core fundamentals plus a Part II on workloads and networking). Each section below links to a post that unpacks the concept with YAML and internals — or use the series sidebar to jump around.
+This field guide is the overview for a multi-part **Kubernetes Internals** deep-dive series (core fundamentals plus a Part II on workloads and networking). Each section below links to a post that unpacks the concept with YAML and internals, or use the series sidebar to jump around.
 
 ---
 
-## Daily essentials — the commands I run most
+## Daily essentials, the commands I run most
 
 If you read nothing else, this is the block worth pinning. Everything here is expanded, with context and
 gotchas, in the sections below.
@@ -44,7 +43,7 @@ kubectl get jobs
 kubectl get ingress
 ```
 
-**Deployments — create & update**
+**Deployments, create & update**
 
 ```bash
 kubectl create -f deployment.yaml --record             # create, recording the change-cause
@@ -53,7 +52,7 @@ kubectl set image deployment/my-app nginx=nginx:1.9.1   # update a running image
 kubectl scale deployment frontend-v2 --replicas=5       # resize
 ```
 
-**Rollout — status, history, rollback**
+**Rollout, status, history, rollback**
 
 ```bash
 kubectl rollout status deployment/my-app     # watch a rollout
@@ -322,6 +321,36 @@ the value from being printed by accident.
 
 ---
 
+## Volumes
+
+*Deep dive → [Volumes: Mounting Storage to a Pod](/devops/how-to-mount-a-volume-to-a-pod-in-kubernetes/)*
+
+A volume is declared in the pod spec and mounted into a container, so most of the work is in YAML; `kubectl` is
+how you apply it and confirm the mount landed.
+
+```bash
+kubectl apply -f pod-with-volume.yaml    # create the pod with its volume
+kubectl describe pod <pod>               # check the Volumes and Mounts sections
+kubectl exec -it <pod> -- df -h          # verify the mount from inside the container
+```
+
+---
+
+## Persistent Volumes
+
+*Deep dive → [Persistent Volumes: Dynamic Provisioning](/devops/persistent-volumes-dynamically-provisioning/)*
+
+A PersistentVolumeClaim asks for storage and a StorageClass provisions it dynamically. Watch the claim bind:
+
+```bash
+kubectl get pv                 # cluster-wide persistent volumes
+kubectl get pvc                # claims in the current namespace
+kubectl get storageclass       # provisioners available for dynamic PVs
+kubectl describe pvc <claim>   # binding status and provisioning events
+```
+
+---
+
 ## Service Accounts
 
 *Deep dive → [Service Accounts](/devops/k8s-service-accounts/)*
@@ -494,7 +523,121 @@ stay one glance away.
 
 ---
 
-- [kubectl Quick Reference — Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
+## Part II: Workloads & Networking
+
+Beyond the core fundamentals, Part II covers multi-container patterns, container health, scaling strategies,
+and networking. The commands below are the quick reference; each links to a post that unpacks the concept.
+
+## Multi-Container Pods
+
+*Deep dive → [Multi-Container Pods](/devops/k8s-multi-container-pods/)*
+
+```bash
+kubectl get pod <pod> -o jsonpath='{.spec.containers[*].name}'  # list a pod's containers
+kubectl logs <pod> -c <container>            # logs from one container
+kubectl exec -it <pod> -c <container> -- sh  # shell into a specific container
+```
+
+---
+
+## Init Containers
+
+*Deep dive → [Init Containers](/devops/k8s-init-containers/)*
+
+```bash
+kubectl get pod <pod>              # shows Init:0/1 while init containers run
+kubectl logs <pod> -c <init-name>  # read an init container's logs
+kubectl describe pod <pod>         # the Init Containers section and its status
+```
+
+---
+
+## Health Probes
+
+*Deep dive → [Health Probes](/devops/k8s-health-probes/)*
+
+```bash
+kubectl get pod <pod>              # the READY column reflects the readiness probe
+kubectl describe pod <pod>         # liveness/readiness config and probe failures
+kubectl get events --field-selector reason=Unhealthy  # failing probes
+```
+
+---
+
+## Deployment Strategies
+
+*Deep dive → [Deployment Strategies](/devops/k8s-deployment-strategies/)*
+
+```bash
+kubectl set image deployment/my-app app=app:v2  # trigger a rolling update
+kubectl rollout status deployment/my-app        # watch it progress
+kubectl rollout undo deployment/my-app          # roll back if it goes bad
+```
+
+---
+
+## Jobs and CronJobs
+
+*Deep dive → [Jobs and CronJobs](/devops/k8s-jobs-and-cronjobs/)*
+
+```bash
+kubectl get jobs
+kubectl get cronjobs
+kubectl create job --from=cronjob/my-cron manual-run  # run a CronJob now
+kubectl logs job/<job>                                # a job's output lives in its pod
+```
+
+---
+
+## Services
+
+*Deep dive → [Services](/devops/k8s-services/)*
+
+```bash
+kubectl get svc
+kubectl expose deployment web --port=80 --target-port=8080  # create a ClusterIP service
+kubectl describe svc web                                    # selector, ports, endpoints
+```
+
+---
+
+## Ingress
+
+*Deep dive → [Ingress](/devops/ingress/)*
+
+```bash
+kubectl get ingress
+kubectl describe ingress <name>   # host/path rules, backends, TLS
+kubectl apply -f ingress.yaml
+```
+
+---
+
+## NetworkPolicy
+
+*Deep dive → [NetworkPolicy](/devops/network-policy/)*
+
+```bash
+kubectl get networkpolicy
+kubectl describe networkpolicy <name>  # pod selector and ingress/egress rules
+kubectl apply -f network-policy.yaml
+```
+
+---
+
+## StatefulSets
+
+*Deep dive → [StatefulSets and Headless Services](/devops/k8s-statefulsets/)*
+
+```bash
+kubectl get statefulset
+kubectl scale statefulset web --replicas=3  # ordered scale-up (web-0, web-1, web-2)
+kubectl delete pod web-0                    # recreated with the same name and PVC
+```
+
+---
+
+- [kubectl Quick Reference, Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 - [kubectl Commands reference](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 - [Managing Secrets using kubectl](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/)
 - [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)

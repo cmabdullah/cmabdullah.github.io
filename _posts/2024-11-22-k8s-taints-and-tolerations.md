@@ -1,5 +1,5 @@
 ---
-title: "Taints and Tolerations — Kubernetes Internals #11"
+title: "Taints and Tolerations (Kubernetes Internals #13)"
 header:
   overlay_image: /assets/images/blog_article_16_city_river_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - scheduling
@@ -33,9 +33,9 @@ kubectl taint nodes node01 app=blue:NoSchedule
 
 The **effect** decides how hard the rejection is:
 
-- **NoSchedule** — new Pods without the toleration are not scheduled here.
-- **PreferNoSchedule** — the scheduler tries to avoid the node but may still use it under pressure.
-- **NoExecute** — new Pods are kept off *and* Pods already running without the toleration are **evicted**.
+- **NoSchedule**, new Pods without the toleration are not scheduled here.
+- **PreferNoSchedule**, the scheduler tries to avoid the node but may still use it under pressure.
+- **NoExecute**, new Pods are kept off *and* Pods already running without the toleration are **evicted**.
 
 ### Tolerate it on the Pod (the pass)
 
@@ -97,8 +97,8 @@ To guarantee a Pod runs on a specific node **and** nothing else lands there:
 
 > kubectl describe node node01 | grep -i taint
 
-[Taints and Tolerations — Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+[Taints and Tolerations, Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 
 ---
-*Kubernetes Internals series — Part 11 of 16.*
+*Kubernetes Internals series, Part 13 of 18.*
 *← Previous: [Service Accounts](/devops/k8s-service-accounts/) · Next: [Labels, Selectors and Rollouts](/devops/k8s-labels-selectors-rollouts/) →*

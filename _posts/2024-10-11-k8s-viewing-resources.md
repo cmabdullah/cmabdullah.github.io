@@ -1,5 +1,5 @@
 ---
-title: "Viewing Resources and Output Formats — Kubernetes Internals #5"
+title: "Viewing Resources and Output Formats (Kubernetes Internals #5)"
 header:
   overlay_image: /assets/images/blog_botanical_12_pink_flowers_sunlight_2047x774.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ header:
 toc: true
 toc_sticky: true
 categories:
-  - devops
+  - DevOps
 tags:
   - kubernetes
   - kubectl
@@ -51,8 +51,8 @@ single biggest day-to-day time-saver.
 
 > kubectl get all -o wide
 
-[kubectl overview — Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/)
+[kubectl overview, Kubernetes docs](https://kubernetes.io/docs/reference/kubectl/)
 
 ---
-*Kubernetes Internals series — Part 5 of 16.*
+*Kubernetes Internals series, Part 5 of 18.*
 *← Previous: [Deployments](/devops/k8s-deployments/) · Next: [Namespaces](/devops/k8s-namespaces/) →*
