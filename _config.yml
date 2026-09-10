@@ -243,6 +243,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  thoughts:
+    output: true
+    permalink: /thoughts/:path/
 
 # Pagination with jekyll-paginate
 paginate: 5 # amount of posts to show
@@ -344,3 +347,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _thoughts
+  - scope:
+      path: ""
+      type: thoughts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true

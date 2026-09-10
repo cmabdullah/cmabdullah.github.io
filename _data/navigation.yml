@@ -6,6 +6,8 @@ main:
     url: /articles/
   - title: "Topics"
     url: /categories/
+  - title: "Thoughts"
+    url: /thoughts/
 #  - title: "Notes"
 #    url: /collection-archive/
 #  - title: "Work"
