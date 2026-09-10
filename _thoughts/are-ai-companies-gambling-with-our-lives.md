@@ -1,6 +1,6 @@
 ---
 title: "The Race Toward Self-Improving Superintelligence: Are We Gambling With Our Lives?"
-date: 2026-09-11
+date: 2026-09-07
 excerpt: "A former Anthropic researcher's resignation warning, and what it says about the race to superintelligence."
 header:
   teaser: /assets/images/blog_abstract_technology_2047x774.jpg
