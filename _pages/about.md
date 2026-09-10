@@ -4,16 +4,14 @@ title: "About Me"
 toc: true
 ---
 
+I'm **C M Abdullah Khan**, a **Software Engineer** currently at **[IdeaScale]** (Oct 2023 - Present), where I
+contribute to building innovative platforms that help organizations harness the power of collective
+intelligence and drive meaningful innovation.
+
 {:.center}
 ![Abdullah Khan](/assets/img/jugbd_cm.JPG){:.lead width="450" height="450" loading="lazy"}
 
-
-
-<br/><br/>
-
-Hi, I'm **C M**, *Abdullah* **Khan**.<br>
-I'm currently working as a Software Engineer at **[IdeaScale]** (Oct 2023 - Present), where I contribute to building
-innovative platforms that help organizations harness the power of collective intelligence and drive meaningful innovation.<br>
+<br/>
 
 Previously, I spent 4 years at **Bangladesh Japan Information Technology (BJIT)** (Oct 2019 - Oct 2023),
 where I developed enterprise-scale microservices for international clients including the largest Japanese E-Commerce client,
